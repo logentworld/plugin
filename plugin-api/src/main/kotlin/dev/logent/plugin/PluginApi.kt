@@ -34,8 +34,8 @@ interface LogentPlugin {
      */
     suspend fun ensureReady(host: PluginHost): Result<Unit> = Result.success(Unit)
 
-    /** 대화가 바뀌거나 중지될 때 플러그인 내부 상태를 정리해요. */
-    suspend fun onSessionReset(host: PluginHost) {}
+    /** 대화가 바뀌거나 중지될 때 플러그인 내부 상태를 즉시 정리해요. */
+    fun onSessionReset() {}
 }
 
 /**
@@ -66,6 +66,9 @@ data class WebRescue(
     val text: String,
     val layer: String,
     val status: Int? = null,
+    val verdict: String = "",
+    val untriedRoutes: List<String> = emptyList(),
+    val needsBrowser: Boolean = false,
 )
 
 fun interface PageRescueService {
