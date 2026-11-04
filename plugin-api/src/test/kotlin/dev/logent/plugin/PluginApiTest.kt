@@ -49,6 +49,6 @@ class PluginApiTest {
         assertEquals(3, obj.integer("count"))
         assertEquals(true, obj.boolean("flag"))
         assertEquals(null, obj.text("count"))
-        assertTrue(obj.boolean("flag")!!.boolean)
+        assertTrue(obj.boolean("flag") == true)
     }
 }
