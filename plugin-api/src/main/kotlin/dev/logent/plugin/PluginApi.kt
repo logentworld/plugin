@@ -31,6 +31,9 @@ interface LogentPlugin {
     /** 플러그인이 기여하는 슬래시 커맨드. 입력 원문은 모델에 보내지 않아요. */
     fun slashCommands(): List<PluginSlashCommand> = emptyList()
 
+    /** 코어가 렌더링하고 앱 전용 저장소에 보관할 설정 스키마예요. */
+    fun settings(): List<PluginSetting> = emptyList()
+
     /**
      * 첫 도구 실행 전에 런타임·APK 자산을 준비해요. 성공한 뒤에도 매번 호출될 수
      * 있으므로 멱등하게 작성하고, 실패는 도구만 막고 앱 전체를 막지 않아요.
@@ -57,8 +60,14 @@ interface PluginHost {
     /** X11·D-Bus·AT-SPI 데스크톱이 준비됐는지 보장해요. */
     suspend fun ensureDesktop(): Result<Unit>
 
-    /** APK 안의 플러그인 자산을 읽어요. 경로는 호출 플러그인의 assets 하위만 허용해요. */
+    /** 활성 콘텐츠 팩 또는 APK의 플러그인 자산을 읽어요. */
     suspend fun readAsset(path: String): Result<ByteArray>
+
+    /** 같은 assets/plugins 경로를 담은 검증된 아카이브의 Termux 경로예요. */
+    suspend fun contentArchive(assetPrefix: String): Result<String> = Result.success(apkPath)
+
+    /** 현재 플러그인이 선언한 설정만 읽어요. 비밀값은 로그·프롬프트에 넣지 않아요. */
+    fun setting(key: String): String? = null
 
     /** 실행 중인 도구 카드에 짧은 진행 문구를 보여 줘요. */
     fun progress(message: String)

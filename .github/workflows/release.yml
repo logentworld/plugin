@@ -1,0 +1,48 @@
+name: API Maven 릴리스
+
+on:
+  push:
+    tags: ['v*.*.*']
+
+permissions:
+  contents: write
+  packages: write
+
+concurrency:
+  group: api-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: 태그와 API 버전이 같은지 확인해요
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=""
+          while IFS='=' read -r key value; do
+            [[ "$key" != pluginApiVersion ]] || version="$value"
+          done < gradle.properties
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo '정식 API 버전이 아니에요.' >&2; exit 1; }
+          [[ "$GITHUB_REF_NAME" == "v$version" ]] || { echo '태그와 pluginApiVersion이 달라요.' >&2; exit 1; }
+      - name: 공개 ABI와 테스트를 확인해요
+        run: ./gradlew --no-daemon :plugin-api:checkKotlinAbi :plugin-api:test
+      - name: 버전된 Maven artifact를 발행해요
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./gradlew --no-daemon :plugin-api:publishPluginApiPublicationToGitHubPackagesRepository
+      - name: JAR와 소스 JAR를 릴리스에 첨부해요
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" plugin-api/build/libs/*.jar \
+            --verify-tag --generate-notes --title "Logent Plugin API $GITHUB_REF_NAME" \
+            --notes '같은 버전의 Maven artifact를 GitHub Packages에서 사용할 수 있어요.'

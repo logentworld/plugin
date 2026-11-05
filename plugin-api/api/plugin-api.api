@@ -1,0 +1,317 @@
+public final class dev/logent/plugin/FunctionSpec {
+	public static final field Companion Ldev/logent/plugin/FunctionSpec$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Lkotlinx/serialization/json/JsonObject;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;)Ldev/logent/plugin/FunctionSpec;
+	public static synthetic fun copy$default (Ldev/logent/plugin/FunctionSpec;Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;ILjava/lang/Object;)Ldev/logent/plugin/FunctionSpec;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getParameters ()Lkotlinx/serialization/json/JsonObject;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class dev/logent/plugin/FunctionSpec$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/logent/plugin/FunctionSpec$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldev/logent/plugin/FunctionSpec;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldev/logent/plugin/FunctionSpec;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/logent/plugin/FunctionSpec$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public abstract interface class dev/logent/plugin/LogentPlugin {
+	public fun ensureReady-gIAlu-s (Ldev/logent/plugin/PluginHost;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getApiVersion ()I
+	public abstract fun getId ()Ljava/lang/String;
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getVersion ()Ljava/lang/String;
+	public fun onSessionReset ()V
+	public fun promptSection ()Ljava/lang/String;
+	public fun services ()Ljava/util/List;
+	public fun settings ()Ljava/util/List;
+	public fun skills ()Ljava/util/List;
+	public fun slashCommands ()Ljava/util/List;
+	public abstract fun tools ()Ljava/util/List;
+}
+
+public final class dev/logent/plugin/LogentPlugin$DefaultImpls {
+	public static fun ensureReady-gIAlu-s (Ldev/logent/plugin/LogentPlugin;Ldev/logent/plugin/PluginHost;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun getApiVersion (Ldev/logent/plugin/LogentPlugin;)I
+	public static fun onSessionReset (Ldev/logent/plugin/LogentPlugin;)V
+	public static fun promptSection (Ldev/logent/plugin/LogentPlugin;)Ljava/lang/String;
+	public static fun services (Ldev/logent/plugin/LogentPlugin;)Ljava/util/List;
+	public static fun settings (Ldev/logent/plugin/LogentPlugin;)Ljava/util/List;
+	public static fun skills (Ldev/logent/plugin/LogentPlugin;)Ljava/util/List;
+	public static fun slashCommands (Ldev/logent/plugin/LogentPlugin;)Ljava/util/List;
+}
+
+public abstract interface class dev/logent/plugin/PageRescueService : dev/logent/plugin/PluginService {
+	public abstract fun fetchPage-BWLJW6A (Ljava/lang/String;IILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class dev/logent/plugin/PluginApiKt {
+	public static final field PLUGIN_API_VERSION I
+}
+
+public final class dev/logent/plugin/PluginContext {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Lkotlin/jvm/functions/Function1;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Ldev/logent/plugin/PluginContext;
+	public static synthetic fun copy$default (Ldev/logent/plugin/PluginContext;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ldev/logent/plugin/PluginContext;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getProgress ()Lkotlin/jvm/functions/Function1;
+	public final fun getSessionId ()Ljava/lang/String;
+	public final fun getWorkspace ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class dev/logent/plugin/PluginHost {
+	public fun contentArchive-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun ensureDesktop-IoAF18A (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getApkPath ()Ljava/lang/String;
+	public abstract fun getAppVersion ()Ljava/lang/String;
+	public abstract fun progress (Ljava/lang/String;)V
+	public abstract fun readAsset-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun setting (Ljava/lang/String;)Ljava/lang/String;
+	public abstract fun shell-0E7RQCE (Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class dev/logent/plugin/PluginHost$DefaultImpls {
+	public static fun contentArchive-gIAlu-s (Ldev/logent/plugin/PluginHost;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun setting (Ldev/logent/plugin/PluginHost;Ljava/lang/String;)Ljava/lang/String;
+}
+
+public abstract interface class dev/logent/plugin/PluginService {
+}
+
+public final class dev/logent/plugin/PluginSetting {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ldev/logent/plugin/PluginSettingKind;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;)Ldev/logent/plugin/PluginSetting;
+	public static synthetic fun copy$default (Ldev/logent/plugin/PluginSetting;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;ILjava/lang/Object;)Ldev/logent/plugin/PluginSetting;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDefaultValue ()Ljava/lang/String;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getKey ()Ljava/lang/String;
+	public final fun getKind ()Ldev/logent/plugin/PluginSettingKind;
+	public final fun getTitle ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/logent/plugin/PluginSettingKind : java/lang/Enum {
+	public static final field BOOLEAN Ldev/logent/plugin/PluginSettingKind;
+	public static final field SECRET Ldev/logent/plugin/PluginSettingKind;
+	public static final field TEXT Ldev/logent/plugin/PluginSettingKind;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/logent/plugin/PluginSettingKind;
+	public static fun values ()[Ldev/logent/plugin/PluginSettingKind;
+}
+
+public final class dev/logent/plugin/PluginSkill {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ldev/logent/plugin/PluginSkill;
+	public static synthetic fun copy$default (Ldev/logent/plugin/PluginSkill;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldev/logent/plugin/PluginSkill;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAssetPath ()Ljava/lang/String;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/logent/plugin/PluginSlashCommand {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Lkotlin/jvm/functions/Function1;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Ldev/logent/plugin/PluginSlashCommand;
+	public static synthetic fun copy$default (Ldev/logent/plugin/PluginSlashCommand;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ldev/logent/plugin/PluginSlashCommand;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBuildPrompt ()Lkotlin/jvm/functions/Function1;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getUsage ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/logent/plugin/PluginTool {
+	public fun <init> (Ldev/logent/plugin/ToolSpec;Ljava/util/Set;ZZLjava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)V
+	public synthetic fun <init> (Ldev/logent/plugin/ToolSpec;Ljava/util/Set;ZZLjava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getAccess ()Ljava/util/Set;
+	public final fun getChildVisible ()Z
+	public final fun getExecute ()Lkotlin/jvm/functions/Function3;
+	public final fun getLabel ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getSerialized ()Z
+	public final fun getSpec ()Ldev/logent/plugin/ToolSpec;
+	public final fun getSummarize ()Lkotlin/jvm/functions/Function1;
+}
+
+public final class dev/logent/plugin/ProcessResult {
+	public fun <init> (ILjava/lang/String;Z)V
+	public final fun component1 ()I
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Z
+	public final fun copy (ILjava/lang/String;Z)Ldev/logent/plugin/ProcessResult;
+	public static synthetic fun copy$default (Ldev/logent/plugin/ProcessResult;ILjava/lang/String;ZILjava/lang/Object;)Ldev/logent/plugin/ProcessResult;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getExitCode ()I
+	public final fun getOutput ()Ljava/lang/String;
+	public final fun getSuccess ()Z
+	public final fun getTruncated ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/logent/plugin/ToolAccess : java/lang/Enum {
+	public static final field DELEGATE Ldev/logent/plugin/ToolAccess;
+	public static final field DESKTOP Ldev/logent/plugin/ToolAccess;
+	public static final field READ_ONLY Ldev/logent/plugin/ToolAccess;
+	public static final field STATE Ldev/logent/plugin/ToolAccess;
+	public static final field UI Ldev/logent/plugin/ToolAccess;
+	public static final field WRITE Ldev/logent/plugin/ToolAccess;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/logent/plugin/ToolAccess;
+	public static fun values ()[Ldev/logent/plugin/ToolAccess;
+}
+
+public final class dev/logent/plugin/ToolImage {
+	public static final field Companion Ldev/logent/plugin/ToolImage$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Ldev/logent/plugin/ToolImage;
+	public static synthetic fun copy$default (Ldev/logent/plugin/ToolImage;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldev/logent/plugin/ToolImage;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getData ()Ljava/lang/String;
+	public final fun getMimeType ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class dev/logent/plugin/ToolImage$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/logent/plugin/ToolImage$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldev/logent/plugin/ToolImage;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldev/logent/plugin/ToolImage;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/logent/plugin/ToolImage$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/logent/plugin/ToolResult {
+	public fun <init> (Ljava/lang/String;Ljava/util/List;Z)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/List;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/util/List;Z)Ldev/logent/plugin/ToolResult;
+	public static synthetic fun copy$default (Ldev/logent/plugin/ToolResult;Ljava/lang/String;Ljava/util/List;ZILjava/lang/Object;)Ldev/logent/plugin/ToolResult;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getImages ()Ljava/util/List;
+	public final fun getText ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun isError ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/logent/plugin/ToolSpec {
+	public static final field Companion Ldev/logent/plugin/ToolSpec$Companion;
+	public fun <init> (Ljava/lang/String;Ldev/logent/plugin/FunctionSpec;)V
+	public synthetic fun <init> (Ljava/lang/String;Ldev/logent/plugin/FunctionSpec;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ldev/logent/plugin/FunctionSpec;
+	public final fun copy (Ljava/lang/String;Ldev/logent/plugin/FunctionSpec;)Ldev/logent/plugin/ToolSpec;
+	public static synthetic fun copy$default (Ldev/logent/plugin/ToolSpec;Ljava/lang/String;Ldev/logent/plugin/FunctionSpec;ILjava/lang/Object;)Ldev/logent/plugin/ToolSpec;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getFunction ()Ldev/logent/plugin/FunctionSpec;
+	public final fun getType ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class dev/logent/plugin/ToolSpec$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/logent/plugin/ToolSpec$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldev/logent/plugin/ToolSpec;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldev/logent/plugin/ToolSpec;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/logent/plugin/ToolSpec$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/logent/plugin/ToolSpecDslKt {
+	public static final fun array (Lkotlinx/serialization/json/JsonObject;Ljava/lang/String;)Lkotlinx/serialization/json/JsonArray;
+	public static final fun boolean (Lkotlinx/serialization/json/JsonObject;Ljava/lang/String;)Ljava/lang/Boolean;
+	public static final fun booleanProperty (Lkotlinx/serialization/json/JsonObjectBuilder;Ljava/lang/String;Ljava/lang/String;)V
+	public static final fun integer (Lkotlinx/serialization/json/JsonObject;Ljava/lang/String;)Ljava/lang/Integer;
+	public static final fun integerProperty (Lkotlinx/serialization/json/JsonObjectBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)V
+	public static synthetic fun integerProperty$default (Lkotlinx/serialization/json/JsonObjectBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Object;)V
+	public static final fun objectArrayProperty (Lkotlinx/serialization/json/JsonObjectBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun objectArrayProperty$default (Lkotlinx/serialization/json/JsonObjectBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun shellQuote (Ljava/lang/String;)Ljava/lang/String;
+	public static final fun stringArrayProperty (Lkotlinx/serialization/json/JsonObjectBuilder;Ljava/lang/String;Ljava/lang/String;)V
+	public static final fun stringProperty (Lkotlinx/serialization/json/JsonObjectBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+	public static synthetic fun stringProperty$default (Lkotlinx/serialization/json/JsonObjectBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)V
+	public static final fun text (Lkotlinx/serialization/json/JsonObject;Ljava/lang/String;)Ljava/lang/String;
+	public static final fun toolSpec (Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lkotlin/jvm/functions/Function1;)Ldev/logent/plugin/ToolSpec;
+	public static synthetic fun toolSpec$default (Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ldev/logent/plugin/ToolSpec;
+}
+
+public final class dev/logent/plugin/WebRescue {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Z)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/Integer;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/util/List;
+	public final fun component6 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Z)Ldev/logent/plugin/WebRescue;
+	public static synthetic fun copy$default (Ldev/logent/plugin/WebRescue;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;ZILjava/lang/Object;)Ldev/logent/plugin/WebRescue;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getLayer ()Ljava/lang/String;
+	public final fun getNeedsBrowser ()Z
+	public final fun getStatus ()Ljava/lang/Integer;
+	public final fun getText ()Ljava/lang/String;
+	public final fun getUntriedRoutes ()Ljava/util/List;
+	public final fun getVerdict ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
