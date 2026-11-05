@@ -61,12 +61,32 @@ class PluginTool(
     val name: String get() = spec.function.name
 }
 
-/** 플러그인이 제공하는 읽기 전용 번들 스킬. 본문은 APK 자산 경로에서 읽어요. */
+/** 플러그인 스킬 읽기에 전달되는 호스트·offset·번들 상대 경로예요. */
+data class PluginSkillReadContext(
+    val host: PluginHost,
+    val offset: Int = 0,
+    val path: String? = null,
+)
+
+/**
+ * 플러그인이 제공하는 읽기 전용 스킬이에요.
+ * `assetPath`가 있으면 코어가 플러그인 패키지 자산을 읽고,
+ * `read`가 있으면 플러그인이 직접 원격·계산 본문을 공급해요.
+ */
 data class PluginSkill(
     val name: String,
     val description: String,
-    val assetPath: String,
-)
+    val assetPath: String? = null,
+    val source: String = "플러그인",
+    val promptIndex: Boolean = true,
+    val read: (suspend (PluginSkillReadContext) -> Result<String>)? = null,
+) {
+    init {
+        require(Regex("[a-z0-9][a-z0-9-]{1,63}").matches(name)) { "스킬 이름이 올바르지 않아요." }
+        require(description.length <= 500) { "스킬 설명이 너무 길어요." }
+        require(assetPath != null || read != null) { "스킬 본문을 읽을 자산 경로나 reader가 필요해요." }
+    }
+}
 
 /** 도구 프로세스의 출력. 셸 상한과 잘림 여부를 그대로 보존해요. */
 data class ProcessResult(

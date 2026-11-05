@@ -43,4 +43,30 @@ class PluginApiTest {
         assertEquals(null, obj.text("count"))
         assertTrue(obj.boolean("flag") == true)
     }
+    @Test
+    fun `hooks mcp skill contract`() {
+        val server = PluginMcpServer("demo", "https://example.com/mcp", mapOf("X-Test" to "1"))
+        assertEquals("demo", server.name)
+        val skill = PluginSkill("demo", "설명", read = { Result.success("본문") })
+        assertEquals("본문", kotlinx.coroutines.runBlocking { skill.read!!(PluginSkillReadContext(FakeHost())) }.getOrThrow())
+        val command = PluginSlashCommand("demo", "", "설명", buildPrompt = { "프롬프트" })
+        val result = kotlinx.coroutines.runBlocking { command.execute("인자", object : PluginSlashContext {
+            override val sessionId = "s"
+            override val workspace = "~"
+            override val host = FakeHost()
+            override suspend fun reply(text: String, isError: Boolean) = Unit
+            override suspend fun runTool(name: String, argumentsJson: String) = ToolResult("")
+        }) }
+        assertEquals("프롬프트", result.prompt)
+    }
+
+    private class FakeHost : PluginHost {
+        override val appVersion = "test"
+        override val apkPath = "/tmp/app.apk"
+        override suspend fun shell(command: String, timeoutSeconds: Int) = Result.success(ProcessResult(0, "", false))
+        override suspend fun ensureDesktop() = Result.success(Unit)
+        override suspend fun readAsset(path: String): Result<ByteArray> = Result.failure(IllegalStateException("없음"))
+        override fun progress(message: String) = Unit
+    }
+
 }
