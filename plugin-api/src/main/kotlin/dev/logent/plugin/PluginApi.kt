@@ -1,7 +1,7 @@
 package dev.logent.plugin
 
 /** 플러그인과 호스트가 함께 쓰는 계약 버전. 깨지는 변경은 반드시 올려요. */
-const val PLUGIN_API_VERSION = 1
+const val PLUGIN_API_VERSION = 2
 
 /**
  * Logent 기능 플러그인.
@@ -25,8 +25,11 @@ interface LogentPlugin {
     /** 시스템 프롬프트에 덧붙일 짧은 사용 지침. */
     fun promptSection(): String? = null
 
-    /** 호스트가 제공하는 공용 서비스. 예: PageRescueService. */
-    fun services(): List<Any> = emptyList()
+    /** 호스트가 제공하는 공용 서비스. 코어는 타입으로 찾아요. */
+    fun services(): List<PluginService> = emptyList()
+
+    /** 플러그인이 기여하는 슬래시 커맨드. 입력 원문은 모델에 보내지 않아요. */
+    fun slashCommands(): List<PluginSlashCommand> = emptyList()
 
     /**
      * 첫 도구 실행 전에 런타임·APK 자산을 준비해요. 성공한 뒤에도 매번 호출될 수
@@ -71,6 +74,17 @@ data class WebRescue(
     val needsBrowser: Boolean = false,
 )
 
-fun interface PageRescueService {
+/** 플러그인이 호스트에 제공하는 타입 있는 서비스의 표식이에요. */
+interface PluginService
+
+fun interface PageRescueService : PluginService {
     suspend fun fetchPage(url: String, maxChars: Int, timeoutSeconds: Int): Result<WebRescue>
 }
+
+/** 플러그인이 소유한 슬래시 커맨드 정의예요. */
+data class PluginSlashCommand(
+    val name: String,
+    val usage: String,
+    val description: String,
+    val buildPrompt: (String) -> String,
+)

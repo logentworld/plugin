@@ -3,10 +3,11 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.kotlin.plugin.serialization")
+    `maven-publish`
 }
 
 group = "dev.logent"
-version = "0.1.0"
+version = "2.0.0"
 
 kotlin {
     compilerOptions {
@@ -27,4 +28,13 @@ dependencies {
 
 tasks.test {
     useJUnit()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("pluginApi") {
+            from(components["java"])
+            artifactId = "logent-plugin-api"
+        }
+    }
 }

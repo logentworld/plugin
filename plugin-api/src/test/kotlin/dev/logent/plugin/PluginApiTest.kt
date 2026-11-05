@@ -31,6 +31,14 @@ class PluginApiTest {
     }
 
     @Test
+    fun `서비스와 슬래시 계약은 타입 있는 목록으로 노출해요`() {
+        val command = PluginSlashCommand("demo", "[text]", "데모", { "프롬프트: $it" })
+        val service = PageRescueService { _, _, _ -> Result.success(WebRescue("본문", "demo")) }
+        assertEquals("프롬프트: 입력", command.buildPrompt("입력"))
+        assertTrue(service is PluginService)
+    }
+
+    @Test
     fun `도구 결과의 오류와 이미지를 보존해요`() {
         val image = ToolImage("AAAA", "image/png")
         val result = ToolResult("본문", listOf(image), isError = true)
