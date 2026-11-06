@@ -82,6 +82,10 @@ interface PluginHost {
     /** 현재 플러그인이 선언한 설정만 읽어요. 비밀값은 로그·프롬프트에 넣지 않아요. */
     fun setting(key: String): String? = null
 
+    /** 선언한 설정 키만 저장해요. 호스트가 범위·종류를 다시 검증해요. */
+    fun writeSetting(key: String, value: String): Result<Unit> =
+        Result.failure(UnsupportedOperationException("플러그인 설정 쓰기를 지원하지 않아요."))
+
     /** 실행 중인 도구 카드에 짧은 진행 문구를 보여 줘요. */
     fun progress(message: String)
 

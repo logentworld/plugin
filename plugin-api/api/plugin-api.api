@@ -136,6 +136,7 @@ public abstract interface class dev/logent/plugin/PluginHost {
 	public abstract fun readAsset-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun setting (Ljava/lang/String;)Ljava/lang/String;
 	public abstract fun shell-0E7RQCE (Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun writeSetting-gIAlu-s (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
 }
 
 public final class dev/logent/plugin/PluginHost$DefaultImpls {
@@ -144,6 +145,7 @@ public final class dev/logent/plugin/PluginHost$DefaultImpls {
 	public static fun getDataDir (Ldev/logent/plugin/PluginHost;)Ljava/lang/String;
 	public static fun http-gIAlu-s (Ldev/logent/plugin/PluginHost;Ldev/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun setting (Ldev/logent/plugin/PluginHost;Ljava/lang/String;)Ljava/lang/String;
+	public static fun writeSetting-gIAlu-s (Ldev/logent/plugin/PluginHost;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
 }
 
 public final class dev/logent/plugin/PluginHttpRequest {
