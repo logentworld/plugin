@@ -84,6 +84,13 @@ interface PluginHost {
 
     /** 실행 중인 도구 카드에 짧은 진행 문구를 보여 줘요. */
     fun progress(message: String)
+
+    /**
+     * 공용 HTTPS 호출이에요. 호스트가 공용 주소·리다이렉트·시간·응답 크기를 강제해요.
+     * 이 기능을 지원하지 않는 호스트는 실패를 돌려주므로 플러그인은 기능만 비활성화해요.
+     */
+    suspend fun http(request: PluginHttpRequest): Result<PluginHttpResponse> =
+        Result.failure(UnsupportedOperationException("플러그인 HTTPS를 지원하지 않아요."))
 }
 
 /** web_fetch가 직접 HTTP·Jina로 실패했을 때 플러그인이 맡는 구조 요청. */

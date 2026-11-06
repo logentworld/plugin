@@ -131,6 +131,7 @@ public abstract interface class dev/logent/plugin/PluginHost {
 	public abstract fun getAppVersion ()Ljava/lang/String;
 	public fun getCacheDir ()Ljava/lang/String;
 	public fun getDataDir ()Ljava/lang/String;
+	public fun http-gIAlu-s (Ldev/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun progress (Ljava/lang/String;)V
 	public abstract fun readAsset-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun setting (Ljava/lang/String;)Ljava/lang/String;
@@ -141,7 +142,45 @@ public final class dev/logent/plugin/PluginHost$DefaultImpls {
 	public static fun contentArchive-gIAlu-s (Ldev/logent/plugin/PluginHost;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun getCacheDir (Ldev/logent/plugin/PluginHost;)Ljava/lang/String;
 	public static fun getDataDir (Ldev/logent/plugin/PluginHost;)Ljava/lang/String;
+	public static fun http-gIAlu-s (Ldev/logent/plugin/PluginHost;Ldev/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun setting (Ldev/logent/plugin/PluginHost;Ljava/lang/String;)Ljava/lang/String;
+}
+
+public final class dev/logent/plugin/PluginHttpRequest {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;II)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()I
+	public final fun component6 ()I
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;II)Ldev/logent/plugin/PluginHttpRequest;
+	public static synthetic fun copy$default (Ldev/logent/plugin/PluginHttpRequest;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;IIILjava/lang/Object;)Ldev/logent/plugin/PluginHttpRequest;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()Ljava/lang/String;
+	public final fun getHeaders ()Ljava/util/Map;
+	public final fun getMaxResponseBytes ()I
+	public final fun getMethod ()Ljava/lang/String;
+	public final fun getTimeoutSeconds ()I
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/logent/plugin/PluginHttpResponse {
+	public fun <init> (ILjava/util/Map;Ljava/lang/String;)V
+	public final fun component1 ()I
+	public final fun component2 ()Ljava/util/Map;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (ILjava/util/Map;Ljava/lang/String;)Ldev/logent/plugin/PluginHttpResponse;
+	public static synthetic fun copy$default (Ldev/logent/plugin/PluginHttpResponse;ILjava/util/Map;Ljava/lang/String;ILjava/lang/Object;)Ldev/logent/plugin/PluginHttpResponse;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()Ljava/lang/String;
+	public final fun getHeaders ()Ljava/util/Map;
+	public final fun getStatus ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
 }
 
 public final class dev/logent/plugin/PluginMcpServer {
