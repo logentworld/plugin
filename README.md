@@ -30,7 +30,7 @@ GitHub Packages는 공개 패키지 다운로드에도 인증이 필요할 수 �
 repositories {
     mavenCentral()
     maven {
-        url = uri("https://maven.pkg.github.com/sleepysoong/logent-plugin-api")
+        url = uri("https://maven.pkg.github.com/logentworld/plugin")
         content { includeModule("dev.logent", "logent-plugin-api") }
         credentials {
             username = providers.environmentVariable("GITHUB_ACTOR").orNull

@@ -60,7 +60,7 @@ publishing {
             pom {
                 name.set("Logent Plugin API")
                 description.set("Logent 호스트와 기능 플러그인이 공유하는 공개 JVM 계약이에요.")
-                url.set("https://github.com/sleepysoong/logent-plugin-api")
+                url.set("https://github.com/logentworld/plugin")
                 properties.put("logent.pluginApi.commit", sourceCommit)
                 licenses {
                     license {
@@ -69,8 +69,8 @@ publishing {
                     }
                 }
                 scm {
-                    url.set("https://github.com/sleepysoong/logent-plugin-api")
-                    connection.set("scm:git:https://github.com/sleepysoong/logent-plugin-api.git")
+                    url.set("https://github.com/logentworld/plugin")
+                    connection.set("scm:git:https://github.com/logentworld/plugin.git")
                     tag.set("v${project.version}")
                 }
             }
@@ -79,7 +79,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/sleepysoong/logent-plugin-api")
+            url = uri("https://maven.pkg.github.com/logentworld/plugin")
             credentials {
                 username = providers.environmentVariable("GITHUB_ACTOR").orNull
                 password = providers.environmentVariable("GITHUB_TOKEN").orNull

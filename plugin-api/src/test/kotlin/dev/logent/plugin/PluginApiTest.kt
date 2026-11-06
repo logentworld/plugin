@@ -44,6 +44,29 @@ class PluginApiTest {
         assertTrue(obj.boolean("flag") == true)
     }
     @Test
+    fun `슬라이더와 선택 설정은 범위와 항목을 검증해요`() {
+        val slider = PluginSetting(
+            key = "limit", title = "한도", kind = PluginSettingKind.SLIDER,
+            defaultValue = "5", minValue = 1, maxValue = 10, step = 2,
+        )
+        assertEquals(10, slider.maxValue)
+        val select = PluginSetting(
+            key = "mode", title = "모드", kind = PluginSettingKind.SELECT,
+            defaultValue = "fast", options = listOf("fast", "deep"),
+        )
+        assertEquals(listOf("fast", "deep"), select.options)
+        // 3.0 계약의 다섯 인자 생성자는 그대로 동작해야 해요.
+        val legacy = PluginSetting("old", "예전", "설명", PluginSettingKind.TEXT, "값")
+        assertEquals("값", legacy.defaultValue)
+        assertTrue(runCatching {
+            PluginSetting("bad", "나쁨", kind = PluginSettingKind.SLIDER, minValue = 5, maxValue = 1)
+        }.isFailure)
+        assertTrue(runCatching {
+            PluginSetting("bad", "나쁨", kind = PluginSettingKind.SELECT, options = listOf("a", "a"))
+        }.isFailure)
+    }
+
+    @Test
     fun `hooks mcp skill contract`() {
         val server = PluginMcpServer("demo", "https://example.com/mcp", mapOf("X-Test" to "1"))
         assertEquals("demo", server.name)
