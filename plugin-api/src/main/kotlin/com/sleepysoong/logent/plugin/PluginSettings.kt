@@ -1,4 +1,4 @@
-package dev.logent.plugin
+package com.sleepysoong.logent.plugin
 
 /** 코어가 공통 설정 화면으로 표시할 필드 종류예요. 비밀값은 기본으로 가려요. */
 enum class PluginSettingKind { TEXT, SECRET, BOOLEAN, SLIDER, SELECT }

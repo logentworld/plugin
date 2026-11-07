@@ -1,7 +1,7 @@
-package dev.logent.plugin
+package com.sleepysoong.logent.plugin
 
 /** 플러그인과 호스트가 함께 쓰는 계약 버전. 깨지는 변경은 반드시 올려요. */
-const val PLUGIN_API_VERSION = 3
+const val PLUGIN_API_VERSION = 4
 
 /**
  * Logent 기능 플러그인.

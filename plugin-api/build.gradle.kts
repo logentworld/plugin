@@ -9,7 +9,7 @@ plugins {
     `maven-publish`
 }
 
-group = "dev.logent"
+group = "com.sleepysoong.logent"
 version = providers.gradleProperty("pluginApiVersion").get()
 
 val sourceCommit = providers.exec {

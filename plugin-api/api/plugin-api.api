@@ -1,11 +1,11 @@
-public final class dev/logent/plugin/FunctionSpec {
-	public static final field Companion Ldev/logent/plugin/FunctionSpec$Companion;
+public final class com/sleepysoong/logent/plugin/FunctionSpec {
+	public static final field Companion Lcom/sleepysoong/logent/plugin/FunctionSpec$Companion;
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/lang/String;
 	public final fun component3 ()Lkotlinx/serialization/json/JsonObject;
-	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;)Ldev/logent/plugin/FunctionSpec;
-	public static synthetic fun copy$default (Ldev/logent/plugin/FunctionSpec;Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;ILjava/lang/Object;)Ldev/logent/plugin/FunctionSpec;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;)Lcom/sleepysoong/logent/plugin/FunctionSpec;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/FunctionSpec;Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/FunctionSpec;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getDescription ()Ljava/lang/String;
 	public final fun getName ()Ljava/lang/String;
@@ -14,28 +14,28 @@ public final class dev/logent/plugin/FunctionSpec {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final synthetic class dev/logent/plugin/FunctionSpec$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Ldev/logent/plugin/FunctionSpec$$serializer;
+public final synthetic class com/sleepysoong/logent/plugin/FunctionSpec$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/sleepysoong/logent/plugin/FunctionSpec$$serializer;
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldev/logent/plugin/FunctionSpec;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/sleepysoong/logent/plugin/FunctionSpec;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldev/logent/plugin/FunctionSpec;)V
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/sleepysoong/logent/plugin/FunctionSpec;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
 	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
-public final class dev/logent/plugin/FunctionSpec$Companion {
+public final class com/sleepysoong/logent/plugin/FunctionSpec$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
-public abstract interface class dev/logent/plugin/LogentPlugin {
-	public fun ensureReady-gIAlu-s (Ldev/logent/plugin/PluginHost;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+public abstract interface class com/sleepysoong/logent/plugin/LogentPlugin {
+	public fun ensureReady-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun getApiVersion ()I
 	public abstract fun getId ()Ljava/lang/String;
 	public abstract fun getName ()Ljava/lang/String;
 	public abstract fun getVersion ()Ljava/lang/String;
-	public fun hooks ()Ldev/logent/plugin/PluginHooks;
+	public fun hooks ()Lcom/sleepysoong/logent/plugin/PluginHooks;
 	public fun mcpServers ()Ljava/util/List;
 	public fun onSessionReset ()V
 	public fun promptSection ()Ljava/lang/String;
@@ -46,36 +46,36 @@ public abstract interface class dev/logent/plugin/LogentPlugin {
 	public fun tools ()Ljava/util/List;
 }
 
-public final class dev/logent/plugin/LogentPlugin$DefaultImpls {
-	public static fun ensureReady-gIAlu-s (Ldev/logent/plugin/LogentPlugin;Ldev/logent/plugin/PluginHost;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public static fun getApiVersion (Ldev/logent/plugin/LogentPlugin;)I
-	public static fun hooks (Ldev/logent/plugin/LogentPlugin;)Ldev/logent/plugin/PluginHooks;
-	public static fun mcpServers (Ldev/logent/plugin/LogentPlugin;)Ljava/util/List;
-	public static fun onSessionReset (Ldev/logent/plugin/LogentPlugin;)V
-	public static fun promptSection (Ldev/logent/plugin/LogentPlugin;)Ljava/lang/String;
-	public static fun services (Ldev/logent/plugin/LogentPlugin;)Ljava/util/List;
-	public static fun settings (Ldev/logent/plugin/LogentPlugin;)Ljava/util/List;
-	public static fun skills (Ldev/logent/plugin/LogentPlugin;)Ljava/util/List;
-	public static fun slashCommands (Ldev/logent/plugin/LogentPlugin;)Ljava/util/List;
-	public static fun tools (Ldev/logent/plugin/LogentPlugin;)Ljava/util/List;
+public final class com/sleepysoong/logent/plugin/LogentPlugin$DefaultImpls {
+	public static fun ensureReady-gIAlu-s (Lcom/sleepysoong/logent/plugin/LogentPlugin;Lcom/sleepysoong/logent/plugin/PluginHost;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun getApiVersion (Lcom/sleepysoong/logent/plugin/LogentPlugin;)I
+	public static fun hooks (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Lcom/sleepysoong/logent/plugin/PluginHooks;
+	public static fun mcpServers (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/util/List;
+	public static fun onSessionReset (Lcom/sleepysoong/logent/plugin/LogentPlugin;)V
+	public static fun promptSection (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/lang/String;
+	public static fun services (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/util/List;
+	public static fun settings (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/util/List;
+	public static fun skills (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/util/List;
+	public static fun slashCommands (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/util/List;
+	public static fun tools (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/util/List;
 }
 
-public abstract interface class dev/logent/plugin/PageRescueService : dev/logent/plugin/PluginService {
+public abstract interface class com/sleepysoong/logent/plugin/PageRescueService : com/sleepysoong/logent/plugin/PluginService {
 	public abstract fun fetchPage-BWLJW6A (Ljava/lang/String;IILkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
-public final class dev/logent/plugin/PluginApiKt {
+public final class com/sleepysoong/logent/plugin/PluginApiKt {
 	public static final field PLUGIN_API_VERSION I
 }
 
-public final class dev/logent/plugin/PluginContext {
+public final class com/sleepysoong/logent/plugin/PluginContext {
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/lang/String;
 	public final fun component3 ()Lkotlin/jvm/functions/Function1;
-	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Ldev/logent/plugin/PluginContext;
-	public static synthetic fun copy$default (Ldev/logent/plugin/PluginContext;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ldev/logent/plugin/PluginContext;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lcom/sleepysoong/logent/plugin/PluginContext;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginContext;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginContext;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getProgress ()Lkotlin/jvm/functions/Function1;
 	public final fun getSessionId ()Ljava/lang/String;
@@ -84,20 +84,20 @@ public final class dev/logent/plugin/PluginContext {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/PluginHookContext {
-	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Ldev/logent/plugin/PluginHost;)V
-	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Ldev/logent/plugin/PluginHost;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+public final class com/sleepysoong/logent/plugin/PluginHookContext {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Lcom/sleepysoong/logent/plugin/PluginHost;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Lcom/sleepysoong/logent/plugin/PluginHost;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/lang/String;
 	public final fun component3 ()Ljava/lang/String;
 	public final fun component4 ()Ljava/lang/String;
 	public final fun component5 ()Ljava/util/Set;
-	public final fun component6 ()Ldev/logent/plugin/PluginHost;
-	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Ldev/logent/plugin/PluginHost;)Ldev/logent/plugin/PluginHookContext;
-	public static synthetic fun copy$default (Ldev/logent/plugin/PluginHookContext;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Ldev/logent/plugin/PluginHost;ILjava/lang/Object;)Ldev/logent/plugin/PluginHookContext;
+	public final fun component6 ()Lcom/sleepysoong/logent/plugin/PluginHost;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Lcom/sleepysoong/logent/plugin/PluginHost;)Lcom/sleepysoong/logent/plugin/PluginHookContext;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Lcom/sleepysoong/logent/plugin/PluginHost;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginHookContext;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getFlags ()Ljava/util/Set;
-	public final fun getHost ()Ldev/logent/plugin/PluginHost;
+	public final fun getHost ()Lcom/sleepysoong/logent/plugin/PluginHost;
 	public final fun getModel ()Ljava/lang/String;
 	public final fun getProvider ()Ljava/lang/String;
 	public final fun getSessionId ()Ljava/lang/String;
@@ -106,32 +106,32 @@ public final class dev/logent/plugin/PluginHookContext {
 	public fun toString ()Ljava/lang/String;
 }
 
-public abstract interface class dev/logent/plugin/PluginHooks {
+public abstract interface class com/sleepysoong/logent/plugin/PluginHooks {
 	public fun sessionReset ()V
-	public fun sessionStart (Ldev/logent/plugin/PluginHookContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public fun systemPrompt (Ldev/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public fun toolCall (Ldev/logent/plugin/PluginHookContext;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public fun toolResult (Ldev/logent/plugin/PluginHookContext;Ljava/lang/String;Ldev/logent/plugin/ToolResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public fun userMessage (Ldev/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sessionStart (Lcom/sleepysoong/logent/plugin/PluginHookContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun systemPrompt (Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun toolCall (Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun toolResult (Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/ToolResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun userMessage (Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
-public final class dev/logent/plugin/PluginHooks$DefaultImpls {
-	public static fun sessionReset (Ldev/logent/plugin/PluginHooks;)V
-	public static fun sessionStart (Ldev/logent/plugin/PluginHooks;Ldev/logent/plugin/PluginHookContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public static fun systemPrompt (Ldev/logent/plugin/PluginHooks;Ldev/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public static fun toolCall (Ldev/logent/plugin/PluginHooks;Ldev/logent/plugin/PluginHookContext;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public static fun toolResult (Ldev/logent/plugin/PluginHooks;Ldev/logent/plugin/PluginHookContext;Ljava/lang/String;Ldev/logent/plugin/ToolResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public static fun userMessage (Ldev/logent/plugin/PluginHooks;Ldev/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+public final class com/sleepysoong/logent/plugin/PluginHooks$DefaultImpls {
+	public static fun sessionReset (Lcom/sleepysoong/logent/plugin/PluginHooks;)V
+	public static fun sessionStart (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginHookContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun systemPrompt (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun toolCall (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun toolResult (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/ToolResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun userMessage (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
-public abstract interface class dev/logent/plugin/PluginHost {
+public abstract interface class com/sleepysoong/logent/plugin/PluginHost {
 	public fun contentArchive-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun ensureDesktop-IoAF18A (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun getApkPath ()Ljava/lang/String;
 	public abstract fun getAppVersion ()Ljava/lang/String;
 	public fun getCacheDir ()Ljava/lang/String;
 	public fun getDataDir ()Ljava/lang/String;
-	public fun http-gIAlu-s (Ldev/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun http-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun progress (Ljava/lang/String;)V
 	public abstract fun readAsset-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun setting (Ljava/lang/String;)Ljava/lang/String;
@@ -139,16 +139,16 @@ public abstract interface class dev/logent/plugin/PluginHost {
 	public fun writeSetting-gIAlu-s (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
 }
 
-public final class dev/logent/plugin/PluginHost$DefaultImpls {
-	public static fun contentArchive-gIAlu-s (Ldev/logent/plugin/PluginHost;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public static fun getCacheDir (Ldev/logent/plugin/PluginHost;)Ljava/lang/String;
-	public static fun getDataDir (Ldev/logent/plugin/PluginHost;)Ljava/lang/String;
-	public static fun http-gIAlu-s (Ldev/logent/plugin/PluginHost;Ldev/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public static fun setting (Ldev/logent/plugin/PluginHost;Ljava/lang/String;)Ljava/lang/String;
-	public static fun writeSetting-gIAlu-s (Ldev/logent/plugin/PluginHost;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
+public final class com/sleepysoong/logent/plugin/PluginHost$DefaultImpls {
+	public static fun contentArchive-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun getCacheDir (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
+	public static fun getDataDir (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
+	public static fun http-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun setting (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;)Ljava/lang/String;
+	public static fun writeSetting-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
 }
 
-public final class dev/logent/plugin/PluginHttpRequest {
+public final class com/sleepysoong/logent/plugin/PluginHttpRequest {
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;II)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -157,8 +157,8 @@ public final class dev/logent/plugin/PluginHttpRequest {
 	public final fun component4 ()Ljava/lang/String;
 	public final fun component5 ()I
 	public final fun component6 ()I
-	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;II)Ldev/logent/plugin/PluginHttpRequest;
-	public static synthetic fun copy$default (Ldev/logent/plugin/PluginHttpRequest;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;IIILjava/lang/Object;)Ldev/logent/plugin/PluginHttpRequest;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;II)Lcom/sleepysoong/logent/plugin/PluginHttpRequest;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;IIILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginHttpRequest;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getBody ()Ljava/lang/String;
 	public final fun getHeaders ()Ljava/util/Map;
@@ -170,13 +170,13 @@ public final class dev/logent/plugin/PluginHttpRequest {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/PluginHttpResponse {
+public final class com/sleepysoong/logent/plugin/PluginHttpResponse {
 	public fun <init> (ILjava/util/Map;Ljava/lang/String;)V
 	public final fun component1 ()I
 	public final fun component2 ()Ljava/util/Map;
 	public final fun component3 ()Ljava/lang/String;
-	public final fun copy (ILjava/util/Map;Ljava/lang/String;)Ldev/logent/plugin/PluginHttpResponse;
-	public static synthetic fun copy$default (Ldev/logent/plugin/PluginHttpResponse;ILjava/util/Map;Ljava/lang/String;ILjava/lang/Object;)Ldev/logent/plugin/PluginHttpResponse;
+	public final fun copy (ILjava/util/Map;Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginHttpResponse;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginHttpResponse;ILjava/util/Map;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginHttpResponse;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getBody ()Ljava/lang/String;
 	public final fun getHeaders ()Ljava/util/Map;
@@ -185,14 +185,14 @@ public final class dev/logent/plugin/PluginHttpResponse {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/PluginMcpServer {
+public final class com/sleepysoong/logent/plugin/PluginMcpServer {
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/lang/String;
 	public final fun component3 ()Ljava/util/Map;
-	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Ldev/logent/plugin/PluginMcpServer;
-	public static synthetic fun copy$default (Ldev/logent/plugin/PluginMcpServer;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)Ldev/logent/plugin/PluginMcpServer;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Lcom/sleepysoong/logent/plugin/PluginMcpServer;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginMcpServer;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginMcpServer;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getHeaders ()Ljava/util/Map;
 	public final fun getName ()Ljava/lang/String;
@@ -201,35 +201,35 @@ public final class dev/logent/plugin/PluginMcpServer {
 	public fun toString ()Ljava/lang/String;
 }
 
-public abstract interface class dev/logent/plugin/PluginService {
+public abstract interface class com/sleepysoong/logent/plugin/PluginService {
 }
 
-public final class dev/logent/plugin/PluginSetting {
+public final class com/sleepysoong/logent/plugin/PluginSetting {
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;)V
-	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;)V
-	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;)V
-	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)V
-	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;I)V
-	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/util/List;)V
-	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingKind;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingKind;Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;I)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/util/List;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/lang/String;
 	public final fun component3 ()Ljava/lang/String;
-	public final fun component4 ()Ldev/logent/plugin/PluginSettingKind;
+	public final fun component4 ()Lcom/sleepysoong/logent/plugin/PluginSettingKind;
 	public final fun component5 ()Ljava/lang/String;
 	public final fun component6 ()Ljava/lang/Integer;
 	public final fun component7 ()Ljava/lang/Integer;
 	public final fun component8 ()I
 	public final fun component9 ()Ljava/util/List;
-	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/util/List;)Ldev/logent/plugin/PluginSetting;
-	public static synthetic fun copy$default (Ldev/logent/plugin/PluginSetting;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/util/List;ILjava/lang/Object;)Ldev/logent/plugin/PluginSetting;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/util/List;)Lcom/sleepysoong/logent/plugin/PluginSetting;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginSetting;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingKind;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/util/List;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginSetting;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getDefaultValue ()Ljava/lang/String;
 	public final fun getDescription ()Ljava/lang/String;
 	public final fun getKey ()Ljava/lang/String;
-	public final fun getKind ()Ldev/logent/plugin/PluginSettingKind;
+	public final fun getKind ()Lcom/sleepysoong/logent/plugin/PluginSettingKind;
 	public final fun getMaxValue ()Ljava/lang/Integer;
 	public final fun getMinValue ()Ljava/lang/Integer;
 	public final fun getOptions ()Ljava/util/List;
@@ -239,18 +239,18 @@ public final class dev/logent/plugin/PluginSetting {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/PluginSettingKind : java/lang/Enum {
-	public static final field BOOLEAN Ldev/logent/plugin/PluginSettingKind;
-	public static final field SECRET Ldev/logent/plugin/PluginSettingKind;
-	public static final field SELECT Ldev/logent/plugin/PluginSettingKind;
-	public static final field SLIDER Ldev/logent/plugin/PluginSettingKind;
-	public static final field TEXT Ldev/logent/plugin/PluginSettingKind;
+public final class com/sleepysoong/logent/plugin/PluginSettingKind : java/lang/Enum {
+	public static final field BOOLEAN Lcom/sleepysoong/logent/plugin/PluginSettingKind;
+	public static final field SECRET Lcom/sleepysoong/logent/plugin/PluginSettingKind;
+	public static final field SELECT Lcom/sleepysoong/logent/plugin/PluginSettingKind;
+	public static final field SLIDER Lcom/sleepysoong/logent/plugin/PluginSettingKind;
+	public static final field TEXT Lcom/sleepysoong/logent/plugin/PluginSettingKind;
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
-	public static fun valueOf (Ljava/lang/String;)Ldev/logent/plugin/PluginSettingKind;
-	public static fun values ()[Ldev/logent/plugin/PluginSettingKind;
+	public static fun valueOf (Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginSettingKind;
+	public static fun values ()[Lcom/sleepysoong/logent/plugin/PluginSettingKind;
 }
 
-public final class dev/logent/plugin/PluginSkill {
+public final class com/sleepysoong/logent/plugin/PluginSkill {
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/jvm/functions/Function2;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/jvm/functions/Function2;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -259,8 +259,8 @@ public final class dev/logent/plugin/PluginSkill {
 	public final fun component4 ()Ljava/lang/String;
 	public final fun component5 ()Z
 	public final fun component6 ()Lkotlin/jvm/functions/Function2;
-	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/jvm/functions/Function2;)Ldev/logent/plugin/PluginSkill;
-	public static synthetic fun copy$default (Ldev/logent/plugin/PluginSkill;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/jvm/functions/Function2;ILjava/lang/Object;)Ldev/logent/plugin/PluginSkill;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/jvm/functions/Function2;)Lcom/sleepysoong/logent/plugin/PluginSkill;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginSkill;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginSkill;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getAssetPath ()Ljava/lang/String;
 	public final fun getDescription ()Ljava/lang/String;
@@ -272,53 +272,53 @@ public final class dev/logent/plugin/PluginSkill {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/PluginSkillReadContext {
-	public fun <init> (Ldev/logent/plugin/PluginHost;ILjava/lang/String;)V
-	public synthetic fun <init> (Ldev/logent/plugin/PluginHost;ILjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun component1 ()Ldev/logent/plugin/PluginHost;
+public final class com/sleepysoong/logent/plugin/PluginSkillReadContext {
+	public fun <init> (Lcom/sleepysoong/logent/plugin/PluginHost;ILjava/lang/String;)V
+	public synthetic fun <init> (Lcom/sleepysoong/logent/plugin/PluginHost;ILjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lcom/sleepysoong/logent/plugin/PluginHost;
 	public final fun component2 ()I
 	public final fun component3 ()Ljava/lang/String;
-	public final fun copy (Ldev/logent/plugin/PluginHost;ILjava/lang/String;)Ldev/logent/plugin/PluginSkillReadContext;
-	public static synthetic fun copy$default (Ldev/logent/plugin/PluginSkillReadContext;Ldev/logent/plugin/PluginHost;ILjava/lang/String;ILjava/lang/Object;)Ldev/logent/plugin/PluginSkillReadContext;
+	public final fun copy (Lcom/sleepysoong/logent/plugin/PluginHost;ILjava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginSkillReadContext;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginSkillReadContext;Lcom/sleepysoong/logent/plugin/PluginHost;ILjava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginSkillReadContext;
 	public fun equals (Ljava/lang/Object;)Z
-	public final fun getHost ()Ldev/logent/plugin/PluginHost;
+	public final fun getHost ()Lcom/sleepysoong/logent/plugin/PluginHost;
 	public final fun getOffset ()I
 	public final fun getPath ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/PluginSlashCommand {
+public final class com/sleepysoong/logent/plugin/PluginSlashCommand {
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun execute (Ljava/lang/String;Ldev/logent/plugin/PluginSlashContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun execute (Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSlashContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun getBuildPrompt ()Lkotlin/jvm/functions/Function1;
 	public final fun getDescription ()Ljava/lang/String;
 	public final fun getName ()Ljava/lang/String;
 	public final fun getUsage ()Ljava/lang/String;
 }
 
-public abstract interface class dev/logent/plugin/PluginSlashContext {
-	public abstract fun getHost ()Ldev/logent/plugin/PluginHost;
+public abstract interface class com/sleepysoong/logent/plugin/PluginSlashContext {
+	public abstract fun getHost ()Lcom/sleepysoong/logent/plugin/PluginHost;
 	public abstract fun getSessionId ()Ljava/lang/String;
 	public abstract fun getWorkspace ()Ljava/lang/String;
 	public abstract fun reply (Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public static synthetic fun reply$default (Ldev/logent/plugin/PluginSlashContext;Ljava/lang/String;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun reply$default (Lcom/sleepysoong/logent/plugin/PluginSlashContext;Ljava/lang/String;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 	public abstract fun runTool (Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
-public final class dev/logent/plugin/PluginSlashContext$DefaultImpls {
-	public static synthetic fun reply$default (Ldev/logent/plugin/PluginSlashContext;Ljava/lang/String;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+public final class com/sleepysoong/logent/plugin/PluginSlashContext$DefaultImpls {
+	public static synthetic fun reply$default (Lcom/sleepysoong/logent/plugin/PluginSlashContext;Ljava/lang/String;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 }
 
-public final class dev/logent/plugin/PluginSlashResult {
+public final class com/sleepysoong/logent/plugin/PluginSlashResult {
 	public fun <init> ()V
 	public fun <init> (Ljava/lang/String;Z)V
 	public synthetic fun <init> (Ljava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Z
-	public final fun copy (Ljava/lang/String;Z)Ldev/logent/plugin/PluginSlashResult;
-	public static synthetic fun copy$default (Ldev/logent/plugin/PluginSlashResult;Ljava/lang/String;ZILjava/lang/Object;)Ldev/logent/plugin/PluginSlashResult;
+	public final fun copy (Ljava/lang/String;Z)Lcom/sleepysoong/logent/plugin/PluginSlashResult;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginSlashResult;Ljava/lang/String;ZILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginSlashResult;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getHandled ()Z
 	public final fun getPrompt ()Ljava/lang/String;
@@ -326,58 +326,58 @@ public final class dev/logent/plugin/PluginSlashResult {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/PluginTool {
-	public fun <init> (Ldev/logent/plugin/ToolSpec;Ljava/util/Set;ZZLjava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)V
-	public synthetic fun <init> (Ldev/logent/plugin/ToolSpec;Ljava/util/Set;ZZLjava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+public final class com/sleepysoong/logent/plugin/PluginTool {
+	public fun <init> (Lcom/sleepysoong/logent/plugin/ToolSpec;Ljava/util/Set;ZZLjava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)V
+	public synthetic fun <init> (Lcom/sleepysoong/logent/plugin/ToolSpec;Ljava/util/Set;ZZLjava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun getAccess ()Ljava/util/Set;
 	public final fun getChildVisible ()Z
 	public final fun getExecute ()Lkotlin/jvm/functions/Function3;
 	public final fun getLabel ()Ljava/lang/String;
 	public final fun getName ()Ljava/lang/String;
 	public final fun getSerialized ()Z
-	public final fun getSpec ()Ldev/logent/plugin/ToolSpec;
+	public final fun getSpec ()Lcom/sleepysoong/logent/plugin/ToolSpec;
 	public final fun getSummarize ()Lkotlin/jvm/functions/Function1;
 }
 
-public abstract interface class dev/logent/plugin/PluginToolCallDecision {
+public abstract interface class com/sleepysoong/logent/plugin/PluginToolCallDecision {
 }
 
-public final class dev/logent/plugin/PluginToolCallDecision$Continue : dev/logent/plugin/PluginToolCallDecision {
-	public static final field INSTANCE Ldev/logent/plugin/PluginToolCallDecision$Continue;
+public final class com/sleepysoong/logent/plugin/PluginToolCallDecision$Continue : com/sleepysoong/logent/plugin/PluginToolCallDecision {
+	public static final field INSTANCE Lcom/sleepysoong/logent/plugin/PluginToolCallDecision$Continue;
 	public fun equals (Ljava/lang/Object;)Z
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/PluginToolCallDecision$Deny : dev/logent/plugin/PluginToolCallDecision {
+public final class com/sleepysoong/logent/plugin/PluginToolCallDecision$Deny : com/sleepysoong/logent/plugin/PluginToolCallDecision {
 	public fun <init> (Ljava/lang/String;)V
 	public final fun component1 ()Ljava/lang/String;
-	public final fun copy (Ljava/lang/String;)Ldev/logent/plugin/PluginToolCallDecision$Deny;
-	public static synthetic fun copy$default (Ldev/logent/plugin/PluginToolCallDecision$Deny;Ljava/lang/String;ILjava/lang/Object;)Ldev/logent/plugin/PluginToolCallDecision$Deny;
+	public final fun copy (Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginToolCallDecision$Deny;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginToolCallDecision$Deny;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginToolCallDecision$Deny;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getMessage ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/PluginToolCallDecision$Replace : dev/logent/plugin/PluginToolCallDecision {
+public final class com/sleepysoong/logent/plugin/PluginToolCallDecision$Replace : com/sleepysoong/logent/plugin/PluginToolCallDecision {
 	public fun <init> (Ljava/lang/String;)V
 	public final fun component1 ()Ljava/lang/String;
-	public final fun copy (Ljava/lang/String;)Ldev/logent/plugin/PluginToolCallDecision$Replace;
-	public static synthetic fun copy$default (Ldev/logent/plugin/PluginToolCallDecision$Replace;Ljava/lang/String;ILjava/lang/Object;)Ldev/logent/plugin/PluginToolCallDecision$Replace;
+	public final fun copy (Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginToolCallDecision$Replace;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginToolCallDecision$Replace;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginToolCallDecision$Replace;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getArgumentsJson ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/ProcessResult {
+public final class com/sleepysoong/logent/plugin/ProcessResult {
 	public fun <init> (ILjava/lang/String;Z)V
 	public final fun component1 ()I
 	public final fun component2 ()Ljava/lang/String;
 	public final fun component3 ()Z
-	public final fun copy (ILjava/lang/String;Z)Ldev/logent/plugin/ProcessResult;
-	public static synthetic fun copy$default (Ldev/logent/plugin/ProcessResult;ILjava/lang/String;ZILjava/lang/Object;)Ldev/logent/plugin/ProcessResult;
+	public final fun copy (ILjava/lang/String;Z)Lcom/sleepysoong/logent/plugin/ProcessResult;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/ProcessResult;ILjava/lang/String;ZILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/ProcessResult;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getExitCode ()I
 	public final fun getOutput ()Ljava/lang/String;
@@ -387,25 +387,25 @@ public final class dev/logent/plugin/ProcessResult {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/ToolAccess : java/lang/Enum {
-	public static final field DELEGATE Ldev/logent/plugin/ToolAccess;
-	public static final field DESKTOP Ldev/logent/plugin/ToolAccess;
-	public static final field READ_ONLY Ldev/logent/plugin/ToolAccess;
-	public static final field STATE Ldev/logent/plugin/ToolAccess;
-	public static final field UI Ldev/logent/plugin/ToolAccess;
-	public static final field WRITE Ldev/logent/plugin/ToolAccess;
+public final class com/sleepysoong/logent/plugin/ToolAccess : java/lang/Enum {
+	public static final field DELEGATE Lcom/sleepysoong/logent/plugin/ToolAccess;
+	public static final field DESKTOP Lcom/sleepysoong/logent/plugin/ToolAccess;
+	public static final field READ_ONLY Lcom/sleepysoong/logent/plugin/ToolAccess;
+	public static final field STATE Lcom/sleepysoong/logent/plugin/ToolAccess;
+	public static final field UI Lcom/sleepysoong/logent/plugin/ToolAccess;
+	public static final field WRITE Lcom/sleepysoong/logent/plugin/ToolAccess;
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
-	public static fun valueOf (Ljava/lang/String;)Ldev/logent/plugin/ToolAccess;
-	public static fun values ()[Ldev/logent/plugin/ToolAccess;
+	public static fun valueOf (Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/ToolAccess;
+	public static fun values ()[Lcom/sleepysoong/logent/plugin/ToolAccess;
 }
 
-public final class dev/logent/plugin/ToolImage {
-	public static final field Companion Ldev/logent/plugin/ToolImage$Companion;
+public final class com/sleepysoong/logent/plugin/ToolImage {
+	public static final field Companion Lcom/sleepysoong/logent/plugin/ToolImage$Companion;
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/lang/String;
-	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Ldev/logent/plugin/ToolImage;
-	public static synthetic fun copy$default (Ldev/logent/plugin/ToolImage;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldev/logent/plugin/ToolImage;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/ToolImage;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/ToolImage;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/ToolImage;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getData ()Ljava/lang/String;
 	public final fun getMimeType ()Ljava/lang/String;
@@ -413,29 +413,29 @@ public final class dev/logent/plugin/ToolImage {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final synthetic class dev/logent/plugin/ToolImage$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Ldev/logent/plugin/ToolImage$$serializer;
+public final synthetic class com/sleepysoong/logent/plugin/ToolImage$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/sleepysoong/logent/plugin/ToolImage$$serializer;
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldev/logent/plugin/ToolImage;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/sleepysoong/logent/plugin/ToolImage;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldev/logent/plugin/ToolImage;)V
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/sleepysoong/logent/plugin/ToolImage;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
 	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
-public final class dev/logent/plugin/ToolImage$Companion {
+public final class com/sleepysoong/logent/plugin/ToolImage$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
-public final class dev/logent/plugin/ToolResult {
+public final class com/sleepysoong/logent/plugin/ToolResult {
 	public fun <init> (Ljava/lang/String;Ljava/util/List;Z)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/util/List;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/util/List;
 	public final fun component3 ()Z
-	public final fun copy (Ljava/lang/String;Ljava/util/List;Z)Ldev/logent/plugin/ToolResult;
-	public static synthetic fun copy$default (Ldev/logent/plugin/ToolResult;Ljava/lang/String;Ljava/util/List;ZILjava/lang/Object;)Ldev/logent/plugin/ToolResult;
+	public final fun copy (Ljava/lang/String;Ljava/util/List;Z)Lcom/sleepysoong/logent/plugin/ToolResult;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/ToolResult;Ljava/lang/String;Ljava/util/List;ZILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/ToolResult;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getImages ()Ljava/util/List;
 	public final fun getText ()Ljava/lang/String;
@@ -444,37 +444,37 @@ public final class dev/logent/plugin/ToolResult {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/logent/plugin/ToolSpec {
-	public static final field Companion Ldev/logent/plugin/ToolSpec$Companion;
-	public fun <init> (Ljava/lang/String;Ldev/logent/plugin/FunctionSpec;)V
-	public synthetic fun <init> (Ljava/lang/String;Ldev/logent/plugin/FunctionSpec;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+public final class com/sleepysoong/logent/plugin/ToolSpec {
+	public static final field Companion Lcom/sleepysoong/logent/plugin/ToolSpec$Companion;
+	public fun <init> (Ljava/lang/String;Lcom/sleepysoong/logent/plugin/FunctionSpec;)V
+	public synthetic fun <init> (Ljava/lang/String;Lcom/sleepysoong/logent/plugin/FunctionSpec;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
-	public final fun component2 ()Ldev/logent/plugin/FunctionSpec;
-	public final fun copy (Ljava/lang/String;Ldev/logent/plugin/FunctionSpec;)Ldev/logent/plugin/ToolSpec;
-	public static synthetic fun copy$default (Ldev/logent/plugin/ToolSpec;Ljava/lang/String;Ldev/logent/plugin/FunctionSpec;ILjava/lang/Object;)Ldev/logent/plugin/ToolSpec;
+	public final fun component2 ()Lcom/sleepysoong/logent/plugin/FunctionSpec;
+	public final fun copy (Ljava/lang/String;Lcom/sleepysoong/logent/plugin/FunctionSpec;)Lcom/sleepysoong/logent/plugin/ToolSpec;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/ToolSpec;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/FunctionSpec;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/ToolSpec;
 	public fun equals (Ljava/lang/Object;)Z
-	public final fun getFunction ()Ldev/logent/plugin/FunctionSpec;
+	public final fun getFunction ()Lcom/sleepysoong/logent/plugin/FunctionSpec;
 	public final fun getType ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
 
-public final synthetic class dev/logent/plugin/ToolSpec$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Ldev/logent/plugin/ToolSpec$$serializer;
+public final synthetic class com/sleepysoong/logent/plugin/ToolSpec$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/sleepysoong/logent/plugin/ToolSpec$$serializer;
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldev/logent/plugin/ToolSpec;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/sleepysoong/logent/plugin/ToolSpec;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldev/logent/plugin/ToolSpec;)V
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/sleepysoong/logent/plugin/ToolSpec;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
 	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
-public final class dev/logent/plugin/ToolSpec$Companion {
+public final class com/sleepysoong/logent/plugin/ToolSpec$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
-public final class dev/logent/plugin/ToolSpecDslKt {
+public final class com/sleepysoong/logent/plugin/ToolSpecDslKt {
 	public static final fun array (Lkotlinx/serialization/json/JsonObject;Ljava/lang/String;)Lkotlinx/serialization/json/JsonArray;
 	public static final fun boolean (Lkotlinx/serialization/json/JsonObject;Ljava/lang/String;)Ljava/lang/Boolean;
 	public static final fun booleanProperty (Lkotlinx/serialization/json/JsonObjectBuilder;Ljava/lang/String;Ljava/lang/String;)V
@@ -488,11 +488,11 @@ public final class dev/logent/plugin/ToolSpecDslKt {
 	public static final fun stringProperty (Lkotlinx/serialization/json/JsonObjectBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
 	public static synthetic fun stringProperty$default (Lkotlinx/serialization/json/JsonObjectBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)V
 	public static final fun text (Lkotlinx/serialization/json/JsonObject;Ljava/lang/String;)Ljava/lang/String;
-	public static final fun toolSpec (Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lkotlin/jvm/functions/Function1;)Ldev/logent/plugin/ToolSpec;
-	public static synthetic fun toolSpec$default (Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ldev/logent/plugin/ToolSpec;
+	public static final fun toolSpec (Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lkotlin/jvm/functions/Function1;)Lcom/sleepysoong/logent/plugin/ToolSpec;
+	public static synthetic fun toolSpec$default (Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/ToolSpec;
 }
 
-public final class dev/logent/plugin/WebRescue {
+public final class com/sleepysoong/logent/plugin/WebRescue {
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Z)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -501,8 +501,8 @@ public final class dev/logent/plugin/WebRescue {
 	public final fun component4 ()Ljava/lang/String;
 	public final fun component5 ()Ljava/util/List;
 	public final fun component6 ()Z
-	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Z)Ldev/logent/plugin/WebRescue;
-	public static synthetic fun copy$default (Ldev/logent/plugin/WebRescue;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;ZILjava/lang/Object;)Ldev/logent/plugin/WebRescue;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Z)Lcom/sleepysoong/logent/plugin/WebRescue;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/WebRescue;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;ZILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/WebRescue;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getLayer ()Ljava/lang/String;
 	public final fun getNeedsBrowser ()Z

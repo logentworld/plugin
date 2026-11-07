@@ -1,4 +1,4 @@
-package dev.logent.plugin
+package com.sleepysoong.logent.plugin
 
 import kotlinx.serialization.json.boolean
 import kotlinx.serialization.json.int

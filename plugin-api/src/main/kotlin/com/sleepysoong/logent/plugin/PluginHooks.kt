@@ -1,4 +1,4 @@
-package dev.logent.plugin
+package com.sleepysoong.logent.plugin
 
 /** 훅 한 번에 전달되는 세션 문맥이에요. 플러그인 코드는 이 값만으로 호스트 기능을 써요. */
 data class PluginHookContext(

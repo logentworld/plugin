@@ -1,4 +1,4 @@
-package dev.logent.plugin
+package com.sleepysoong.logent.plugin
 
 /**
  * 플러그인이 호스트에 요청하는 HTTPS 호출이에요.

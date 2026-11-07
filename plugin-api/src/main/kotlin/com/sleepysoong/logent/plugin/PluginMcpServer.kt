@@ -1,4 +1,4 @@
-package dev.logent.plugin
+package com.sleepysoong.logent.plugin
 
 /**
  * 플러그인이 기여하는 Streamable HTTP MCP 서버예요.
