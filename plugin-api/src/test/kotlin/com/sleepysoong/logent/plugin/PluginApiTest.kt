@@ -83,6 +83,37 @@ class PluginApiTest {
         assertEquals("프롬프트", result.prompt)
     }
 
+    @Test
+    fun `플러그인 프로바이더는 기존 서비스 목록으로 기여하고 스트리밍 미지원 호스트를 구분해요`() = kotlinx.coroutines.runBlocking {
+        val request = PluginAiRequest(
+            model = "demo",
+            messages = listOf(ApiMessage("user", kotlinx.serialization.json.JsonPrimitive("안녕"))),
+        )
+        val provider = object : PluginAiProvider {
+            override val id = "demo-provider"
+            override val name = "Demo"
+            override val description = "테스트 제공자"
+            override val defaultModel = "demo"
+            override fun open(host: PluginHost): PluginAiSession = object : PluginAiSession {
+                override suspend fun complete(request: PluginAiRequest) =
+                    ChatResult(ApiMessage("assistant", kotlinx.serialization.json.JsonPrimitive("완료")), 1, 2)
+                override suspend fun completeStreaming(
+                    request: PluginAiRequest,
+                    onEvent: (PluginAiStreamEvent) -> Unit,
+                ): ChatResult {
+                    onEvent(PluginAiStreamEvent.Content("완료"))
+                    return complete(request)
+                }
+            }
+        }
+        val services: List<PluginService> = listOf(provider)
+        assertEquals(provider, services.filterIsInstance<PluginAiProvider>().single())
+        assertEquals("완료", kotlinx.coroutines.runBlocking { provider.open(FakeHost()).complete(request) }
+            .message.content?.jsonPrimitive?.content)
+        assertTrue(FakeHost().httpStream(PluginHttpRequest("POST", "https://example.com/chat"), {}).isFailure)
+        assertEquals(429, PluginAiException("한도", status = 429).status)
+    }
+
     private class FakeHost : PluginHost {
         override val appVersion = "test"
         override val apkPath = "/tmp/app.apk"

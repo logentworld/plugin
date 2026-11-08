@@ -95,6 +95,19 @@ interface PluginHost {
      */
     suspend fun http(request: PluginHttpRequest): Result<PluginHttpResponse> =
         Result.failure(UnsupportedOperationException("플러그인 HTTPS를 지원하지 않아요."))
+
+    /**
+     * SSE 본문을 줄 단위로 전달하는 공용 HTTPS 호출이에요.
+     *
+     * 리다이렉트·공용 주소·취소·크기 한도는 [http]와 같고, 인증 헤더는 다른 출처로
+     * 넘기지 않아요. 이 기능을 지원하지 않는 호스트는 실패를 돌려주므로 플러그인은
+     * 비스트리밍 [http]로 대체할 수 있어요.
+     */
+    suspend fun httpStream(
+        request: PluginHttpRequest,
+        onLine: (String) -> Unit,
+    ): Result<PluginHttpResponse> =
+        Result.failure(UnsupportedOperationException("플러그인 HTTPS 스트리밍을 지원하지 않아요."))
 }
 
 /** web_fetch가 직접 HTTP·Jina로 실패했을 때 플러그인이 맡는 구조 요청. */

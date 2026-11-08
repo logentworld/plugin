@@ -1,3 +1,117 @@
+public final class com/sleepysoong/logent/plugin/ApiFunctionCall {
+	public static final field Companion Lcom/sleepysoong/logent/plugin/ApiFunctionCall$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/ApiFunctionCall;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/ApiFunctionCall;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/ApiFunctionCall;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getArguments ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class com/sleepysoong/logent/plugin/ApiFunctionCall$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/sleepysoong/logent/plugin/ApiFunctionCall$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/sleepysoong/logent/plugin/ApiFunctionCall;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/sleepysoong/logent/plugin/ApiFunctionCall;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/sleepysoong/logent/plugin/ApiFunctionCall$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/sleepysoong/logent/plugin/ApiMessage {
+	public static final field Companion Lcom/sleepysoong/logent/plugin/ApiMessage$Companion;
+	public fun <init> (Ljava/lang/String;Lkotlinx/serialization/json/JsonElement;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Lkotlinx/serialization/json/JsonElement;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Lkotlinx/serialization/json/JsonElement;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/util/List;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Lkotlinx/serialization/json/JsonElement;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/ApiMessage;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/ApiMessage;Ljava/lang/String;Lkotlinx/serialization/json/JsonElement;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/ApiMessage;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getContent ()Lkotlinx/serialization/json/JsonElement;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getRole ()Ljava/lang/String;
+	public final fun getToolCallId ()Ljava/lang/String;
+	public final fun getToolCalls ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class com/sleepysoong/logent/plugin/ApiMessage$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/sleepysoong/logent/plugin/ApiMessage$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/sleepysoong/logent/plugin/ApiMessage;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/sleepysoong/logent/plugin/ApiMessage;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/sleepysoong/logent/plugin/ApiMessage$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/sleepysoong/logent/plugin/ApiToolCall {
+	public static final field Companion Lcom/sleepysoong/logent/plugin/ApiToolCall$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/ApiFunctionCall;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Lcom/sleepysoong/logent/plugin/ApiFunctionCall;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/ApiFunctionCall;)Lcom/sleepysoong/logent/plugin/ApiToolCall;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/ApiToolCall;Ljava/lang/String;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/ApiFunctionCall;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/ApiToolCall;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getFunction ()Lcom/sleepysoong/logent/plugin/ApiFunctionCall;
+	public final fun getId ()Ljava/lang/String;
+	public final fun getType ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class com/sleepysoong/logent/plugin/ApiToolCall$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/sleepysoong/logent/plugin/ApiToolCall$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/sleepysoong/logent/plugin/ApiToolCall;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/sleepysoong/logent/plugin/ApiToolCall;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/sleepysoong/logent/plugin/ApiToolCall$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/sleepysoong/logent/plugin/ChatResult {
+	public fun <init> (Lcom/sleepysoong/logent/plugin/ApiMessage;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)V
+	public synthetic fun <init> (Lcom/sleepysoong/logent/plugin/ApiMessage;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lcom/sleepysoong/logent/plugin/ApiMessage;
+	public final fun component2 ()Ljava/lang/Integer;
+	public final fun component3 ()Ljava/lang/Integer;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (Lcom/sleepysoong/logent/plugin/ApiMessage;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/ChatResult;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/ChatResult;Lcom/sleepysoong/logent/plugin/ApiMessage;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/ChatResult;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getInputTokens ()Ljava/lang/Integer;
+	public final fun getMessage ()Lcom/sleepysoong/logent/plugin/ApiMessage;
+	public final fun getOutputTokens ()Ljava/lang/Integer;
+	public final fun getResponseModel ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
 public final class com/sleepysoong/logent/plugin/FunctionSpec {
 	public static final field Companion Lcom/sleepysoong/logent/plugin/FunctionSpec$Companion;
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;)V
@@ -62,6 +176,97 @@ public final class com/sleepysoong/logent/plugin/LogentPlugin$DefaultImpls {
 
 public abstract interface class com/sleepysoong/logent/plugin/PageRescueService : com/sleepysoong/logent/plugin/PluginService {
 	public abstract fun fetchPage-BWLJW6A (Ljava/lang/String;IILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginAiException : java/lang/Exception {
+	public fun <init> (Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getRetryAfterSeconds ()Ljava/lang/Long;
+	public final fun getStatus ()Ljava/lang/Integer;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginAiModel {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/Integer;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)Lcom/sleepysoong/logent/plugin/PluginAiModel;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginAiModel;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginAiModel;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getContextWindow ()Ljava/lang/Integer;
+	public final fun getId ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/sleepysoong/logent/plugin/PluginAiProvider : com/sleepysoong/logent/plugin/PluginService {
+	public fun getApiKeySetting ()Ljava/lang/String;
+	public fun getContextWindow ()Ljava/lang/Integer;
+	public abstract fun getDefaultModel ()Ljava/lang/String;
+	public abstract fun getDescription ()Ljava/lang/String;
+	public abstract fun getId ()Ljava/lang/String;
+	public fun getModels ()Ljava/util/List;
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun open (Lcom/sleepysoong/logent/plugin/PluginHost;)Lcom/sleepysoong/logent/plugin/PluginAiSession;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginAiProvider$DefaultImpls {
+	public static fun getApiKeySetting (Lcom/sleepysoong/logent/plugin/PluginAiProvider;)Ljava/lang/String;
+	public static fun getContextWindow (Lcom/sleepysoong/logent/plugin/PluginAiProvider;)Ljava/lang/Integer;
+	public static fun getModels (Lcom/sleepysoong/logent/plugin/PluginAiProvider;)Ljava/util/List;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginAiRequest {
+	public fun <init> (Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/List;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/String;Ljava/util/List;Ljava/util/List;)Lcom/sleepysoong/logent/plugin/PluginAiRequest;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginAiRequest;Ljava/lang/String;Ljava/util/List;Ljava/util/List;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginAiRequest;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMessages ()Ljava/util/List;
+	public final fun getModel ()Ljava/lang/String;
+	public final fun getTools ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/sleepysoong/logent/plugin/PluginAiSession {
+	public fun cancel ()V
+	public abstract fun complete (Lcom/sleepysoong/logent/plugin/PluginAiRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun completeStreaming (Lcom/sleepysoong/logent/plugin/PluginAiRequest;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginAiSession$DefaultImpls {
+	public static fun cancel (Lcom/sleepysoong/logent/plugin/PluginAiSession;)V
+}
+
+public abstract interface class com/sleepysoong/logent/plugin/PluginAiStreamEvent {
+}
+
+public final class com/sleepysoong/logent/plugin/PluginAiStreamEvent$Content : com/sleepysoong/logent/plugin/PluginAiStreamEvent {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginAiStreamEvent$Content;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginAiStreamEvent$Content;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginAiStreamEvent$Content;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDelta ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginAiStreamEvent$Reasoning : com/sleepysoong/logent/plugin/PluginAiStreamEvent {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginAiStreamEvent$Reasoning;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginAiStreamEvent$Reasoning;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginAiStreamEvent$Reasoning;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDelta ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
 }
 
 public final class com/sleepysoong/logent/plugin/PluginApiKt {
@@ -132,6 +337,7 @@ public abstract interface class com/sleepysoong/logent/plugin/PluginHost {
 	public fun getCacheDir ()Ljava/lang/String;
 	public fun getDataDir ()Ljava/lang/String;
 	public fun http-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun httpStream-0E7RQCE (Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun progress (Ljava/lang/String;)V
 	public abstract fun readAsset-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun setting (Ljava/lang/String;)Ljava/lang/String;
@@ -144,6 +350,7 @@ public final class com/sleepysoong/logent/plugin/PluginHost$DefaultImpls {
 	public static fun getCacheDir (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
 	public static fun getDataDir (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
 	public static fun http-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun httpStream-0E7RQCE (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun setting (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;)Ljava/lang/String;
 	public static fun writeSetting-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
 }
