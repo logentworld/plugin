@@ -21,8 +21,13 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '21'
+          java-version: "21"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - uses: gradle/actions/setup-gradle@v4
+      - name: 문서·워크플로 포맷을 검사해요
+        run: ./scripts/format.sh
       - name: 공개 ABI와 테스트 및 로컬 Maven 발행을 확인해요
         run: ./gradlew --no-daemon :plugin-api:checkKotlinAbi :plugin-api:test :plugin-api:publishToMavenLocal
       - name: 테스트 결과를 보관해요

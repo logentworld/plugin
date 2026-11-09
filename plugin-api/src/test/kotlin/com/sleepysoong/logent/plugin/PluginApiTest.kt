@@ -18,10 +18,10 @@ class PluginApiTest {
         }
         val parameters = spec.function.parameters
         assertEquals("object", parameters["type"]?.jsonPrimitive?.content)
-        assertTrue(parameters["required"].toString().contains("text"))
+        assertEquals("[\"text\"]", parameters["required"].toString())
         val properties = parameters["properties"]!!.jsonObject
         assertEquals(1, properties["limit"]!!.jsonObject["minimum"]!!.jsonPrimitive.int)
-        assertEquals(true, properties["raw"]!!.jsonObject["type"]!!.jsonPrimitive.content == "boolean")
+        assertEquals("boolean", properties["raw"]!!.jsonObject["type"]!!.jsonPrimitive.content)
     }
 
     @Test
@@ -41,7 +41,6 @@ class PluginApiTest {
         assertEquals(3, obj.integer("count"))
         assertEquals(true, obj.boolean("flag"))
         assertEquals(null, obj.text("count"))
-        assertTrue(obj.boolean("flag") == true)
     }
     @Test
     fun `슬라이더와 선택 설정은 범위와 항목을 검증해요`() {
