@@ -332,6 +332,7 @@ public final class com/sleepysoong/logent/plugin/PluginHooks$DefaultImpls {
 public abstract interface class com/sleepysoong/logent/plugin/PluginHost {
 	public fun contentArchive-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun ensureDesktop-IoAF18A (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getAiConversationId ()Ljava/lang/String;
 	public abstract fun getApkPath ()Ljava/lang/String;
 	public abstract fun getAppVersion ()Ljava/lang/String;
 	public fun getCacheDir ()Ljava/lang/String;
@@ -347,6 +348,7 @@ public abstract interface class com/sleepysoong/logent/plugin/PluginHost {
 
 public final class com/sleepysoong/logent/plugin/PluginHost$DefaultImpls {
 	public static fun contentArchive-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun getAiConversationId (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
 	public static fun getCacheDir (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
 	public static fun getDataDir (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
 	public static fun http-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;

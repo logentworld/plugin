@@ -3,7 +3,7 @@
 Logent 코어와 기능 플러그인이 함께 쓰는 공개 JVM 계약이에요. Android 내부 클래스나
 `Context`에 의존하지 않고, JDK 17용 JAR로 발행해요.
 
-## API 4.1 계약
+## API 4.2 계약
 
 - `LogentPlugin`: 플러그인 식별자·버전, 도구·스킬·프롬프트·서비스·슬래시 커맨드를 선언해요.
 - `PluginTool`: 모델에 노출할 스키마·권한·직렬화 정책과 실행기를 제공해요.
@@ -12,20 +12,23 @@ Logent 코어와 기능 플러그인이 함께 쓰는 공개 JVM 계약이에요
 - `PageRescueService`: 코어 `web_fetch`가 직접 HTTP·Jina로 실패했을 때 구조해요.
 - `PluginAiProvider`: `services()`로 새 AI 백엔드를 기여해요. 키는 선언된 SECRET 설정에서
   읽고, `PluginAiSession`이 완료·스트리밍·취소를 맡아요. 코어는 실행 시작 시 세션을 고정해
-  재시도 중 설정 변경으로 다른 백엔드에 키를 보내지 않아요.
+  재시도 중 설정 변경으로 다른 백엔드에 키를 보내지 않아요. `open(host)`에 전달하는
+  호스트의 `aiConversationId`는 코어가 공급하는 불투명한 영속 대화 ID예요. 재시도·도구
+  라운드·새 턴에서 유지하고, 새 대화·분기 대화·서브에이전트 대화에는 각각 별도 ID를 써요.
+  AI 대화에 바인딩되지 않은 일반 도구 호스트와 기존 호스트의 기본값은 `null`이에요.
 - `ApiMessage`·`ApiToolCall`·`ChatResult`·`ToolSpec`: 코어와 프로바이더가 메시지를 복사하지 않고
   같은 대화 계약을 공유해요.
 - `PluginSlashCommand`: 모델에 원문을 보내지 않는 슬래시 커맨드를 선언해요.
 - 설정과 콘텐츠 계약도 이 artifact에서 함께 버전 관리해요.
-- 계약 상수는 `PLUGIN_API_VERSION = 4`, Maven 버전은 `4.1.0`이에요. 4.1은 서비스·기본 메서드
-  추가만 포함하므로 기존 API 4 플러그인을 다시 컴파일하지 않아도 돼요.
+- 계약 상수는 `PLUGIN_API_VERSION = 4`, Maven 버전은 `4.2.0`이에요. 4.2는 대화 ID의
+  기본 getter 추가만 포함하므로 기존 API 4 플러그인·호스트를 다시 컴파일하지 않아도 돼요.
 
 플러그인은 서명된 `.lpg`로 배포되는 신뢰 코드예요. 호스트는 권한 선언을 다시 검사하고,
 `ToolAccess.DELEGATE`를 플러그인 도구에 허용하지 않아요.
 
 ## 버전된 artifact 사용
 
-좌표는 **`com.sleepysoong.logent:logent-plugin-api:4.1.0`**이에요. 기본 소비 경로는
+좌표는 **`com.sleepysoong.logent:logent-plugin-api:4.2.0`**이에요. 기본 소비 경로는
 GitHub Packages이며, 형제 디렉터리의 소스가 없어도 artifact를 사용할 수 있어요.
 GitHub Packages는 공개 패키지 다운로드에도 인증이 필요할 수 있어요.
 로컬에서는 `read:packages` 권한 토큰을 환경 변수로만 전달하고 저장소에 기록하지 않아요.
@@ -45,7 +48,7 @@ repositories {
     }
 }
 dependencies {
-    implementation("com.sleepysoong.logent:logent-plugin-api:4.1.0")
+    implementation("com.sleepysoong.logent:logent-plugin-api:4.2.0")
 }
 ```
 
@@ -104,7 +107,7 @@ JAR manifest의 `Implementation-Version`, `Logent-Plugin-Api-Commit`과 Maven PO
 
 `gradle.properties`의 `pluginApiVersion`이 발행 버전의 단일 원천이에요.
 PR과 `main` CI는 공개 ABI, 단위 테스트, Maven Local 발행을 확인해요.
-릴리스는 같은 버전의 `v4.1.0` 형식 태그를 push할 때 실행해요. 태그와 버전이 다르면
+릴리스는 같은 버전의 `v4.2.0` 형식 태그를 push할 때 실행해요. 태그와 버전이 다르면
 실패하고, ABI·테스트를 통과한 뒤 GitHub Packages에 JAR·소스 JAR·POM·Gradle metadata를
 발행하고 GitHub Release에 JAR를 첨부해요.
 

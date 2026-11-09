@@ -57,6 +57,16 @@ interface LogentPlugin {
 interface PluginHost {
     val appVersion: String
 
+    /**
+     * [PluginAiProvider.open]에 전달하는 호스트에만 바인딩되는 불투명한 AI 대화 ID예요.
+     * 코어가 실제 영속 세션 ID를 공급하며, 재시도·도구 라운드·새 턴에서도 유지해요.
+     * 새 대화·분기 대화·서브에이전트 대화에는 각각 별도 ID를 공급해요.
+     * 요청이나 [PluginAiSession]마다 새로 만들거나 프롬프트에서 유도하지 않아요.
+     * 일반 도구 호스트처럼 AI 대화에 바인딩되지 않은 호스트에서는 null이에요.
+     * 이 기능을 제공하지 않는 기존 호스트도 기본값 null을 반환해요.
+     */
+    val aiConversationId: String? get() = null
+
     /** 기존 플러그인 호환용 APK 경로예요. 새 플러그인은 contentArchive를 써요. */
     val apkPath: String
 
