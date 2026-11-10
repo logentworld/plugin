@@ -337,8 +337,10 @@ public abstract interface class com/sleepysoong/logent/plugin/PluginHost {
 	public abstract fun getAppVersion ()Ljava/lang/String;
 	public fun getCacheDir ()Ljava/lang/String;
 	public fun getDataDir ()Ljava/lang/String;
+	public fun http-0E7RQCE (Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Ljava/util/Set;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun http-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun httpStream-0E7RQCE (Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun httpStream-BWLJW6A (Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/jvm/functions/Function1;Ljava/util/Set;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun progress (Ljava/lang/String;)V
 	public abstract fun readAsset-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun setting (Ljava/lang/String;)Ljava/lang/String;
@@ -351,8 +353,10 @@ public final class com/sleepysoong/logent/plugin/PluginHost$DefaultImpls {
 	public static fun getAiConversationId (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
 	public static fun getCacheDir (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
 	public static fun getDataDir (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
+	public static fun http-0E7RQCE (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Ljava/util/Set;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun http-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun httpStream-0E7RQCE (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun httpStream-BWLJW6A (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/jvm/functions/Function1;Ljava/util/Set;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun setting (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;)Ljava/lang/String;
 	public static fun writeSetting-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
 }

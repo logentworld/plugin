@@ -118,6 +118,30 @@ interface PluginHost {
         onLine: (String) -> Unit,
     ): Result<PluginHttpResponse> =
         Result.failure(UnsupportedOperationException("플러그인 HTTPS 스트리밍을 지원하지 않아요."))
+
+    /**
+     * [http]와 같고, 리다이렉트가 다른 출처로 향할 때 전달하지 않을 헤더 이름을 함께 지정해요.
+     *
+     * 이름은 대소문자를 구분하지 않아요. 세션·추적 식별자처럼 출처가 바뀌면 유출되면 안 되는
+     * 플러그인 고유 헤더를 플러그인이 직접 선언해요. 호스트가 이 보호를 지원하지 않으면
+     * 조용히 무시하지 않고 실패를 돌려줘요.
+     */
+    suspend fun http(
+        request: PluginHttpRequest,
+        protectedHeaders: Set<String>,
+    ): Result<PluginHttpResponse> =
+        Result.failure(UnsupportedOperationException("플러그인 HTTPS 헤더 보호를 지원하지 않아요."))
+
+    /**
+     * [httpStream]과 같고, 다른 출처로 향하는 리다이렉트에서 제외할 헤더를 함께 지정해요.
+     * 보호 대상 이름은 [http]와 같은 규칙을 따라요.
+     */
+    suspend fun httpStream(
+        request: PluginHttpRequest,
+        onLine: (String) -> Unit,
+        protectedHeaders: Set<String>,
+    ): Result<PluginHttpResponse> =
+        Result.failure(UnsupportedOperationException("플러그인 HTTPS 헤더 보호를 지원하지 않아요."))
 }
 
 /** web_fetch가 직접 HTTP·Jina로 실패했을 때 플러그인이 맡는 구조 요청. */
