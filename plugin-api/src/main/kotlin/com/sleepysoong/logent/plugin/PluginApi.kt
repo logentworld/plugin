@@ -82,6 +82,19 @@ interface PluginHost {
     /** 플러그인 전용 캐시 저장소예요. 앱이 지워도 되는 파일만 둬요. */
     val cacheDir: String get() = ""
 
+    /**
+     * Android 호스트의 Application Context예요. 서명된 플러그인만 적재되므로
+     * 플랫폼 API를 직접 다룰 때 사용할 수 있어요. Android가 아닌 호스트는 null을 반환해요.
+     */
+    val androidContext: Any? get() = null
+
+    /**
+     * Android 런타임 권한을 호스트 화면에서 요청해요.
+     * 이미 허용됐으면 true, 사용자가 거부했거나 호스트가 지원하지 않으면 실패를 돌려줘요.
+     */
+    suspend fun requestAndroidPermission(permission: String): Result<Boolean> =
+        Result.failure(UnsupportedOperationException("Android 런타임 권한 요청을 지원하지 않아요."))
+
     /** Termux 셸 한 번 실행. 출력 상한과 시간 상한은 호스트가 강제해요. */
     suspend fun shell(command: String, timeoutSeconds: Int): Result<ProcessResult>
 

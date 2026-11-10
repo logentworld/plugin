@@ -337,6 +337,7 @@ public abstract interface class com/sleepysoong/logent/plugin/PluginHost {
 	public fun contentArchive-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun ensureDesktop-IoAF18A (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun getAiConversationId ()Ljava/lang/String;
+	public fun getAndroidContext ()Ljava/lang/Object;
 	public abstract fun getApkPath ()Ljava/lang/String;
 	public abstract fun getAppVersion ()Ljava/lang/String;
 	public fun getCacheDir ()Ljava/lang/String;
@@ -348,6 +349,7 @@ public abstract interface class com/sleepysoong/logent/plugin/PluginHost {
 	public abstract fun progress (Ljava/lang/String;)V
 	public abstract fun readAsset-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun removeSettingEntry-gIAlu-s (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
+	public fun requestAndroidPermission-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun setting (Ljava/lang/String;)Ljava/lang/String;
 	public fun settingEntries (Ljava/lang/String;)Ljava/util/List;
 	public abstract fun shell-0E7RQCE (Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -359,6 +361,7 @@ public abstract interface class com/sleepysoong/logent/plugin/PluginHost {
 public final class com/sleepysoong/logent/plugin/PluginHost$DefaultImpls {
 	public static fun contentArchive-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun getAiConversationId (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
+	public static fun getAndroidContext (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/Object;
 	public static fun getCacheDir (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
 	public static fun getDataDir (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/lang/String;
 	public static fun http-0E7RQCE (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Ljava/util/Set;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -366,6 +369,7 @@ public final class com/sleepysoong/logent/plugin/PluginHost$DefaultImpls {
 	public static fun httpStream-0E7RQCE (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun httpStream-BWLJW6A (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/jvm/functions/Function1;Ljava/util/Set;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun removeSettingEntry-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
+	public static fun requestAndroidPermission-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun setting (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;)Ljava/lang/String;
 	public static fun settingEntries (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;)Ljava/util/List;
 	public static fun writeSetting-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;

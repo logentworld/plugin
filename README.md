@@ -3,7 +3,7 @@
 Logent 코어와 기능 플러그인이 함께 쓰는 공개 JVM 계약이에요. Android 내부 클래스나
 `Context`에 의존하지 않고, JDK 17용 JAR로 발행해요.
 
-## API 4.4 계약
+## API 4.5 계약
 
 - `LogentPlugin`: 플러그인 식별자·버전, 도구·스킬·프롬프트·서비스·슬래시 커맨드를 선언해요.
 - `PluginTool`: 모델에 노출할 스키마·권한·직렬화 정책과 실행기를 제공해요.
@@ -26,16 +26,16 @@ Logent 코어와 기능 플러그인이 함께 쓰는 공개 JVM 계약이에요
   `writeSettingEntry()`는 전달한 필드만 원자 갱신하며 생략한 필드는 유지해요. 비밀값은
   내보내기·가져오기에서 제외해요. `writeSettingEntryIfUnchanged()`는 기대한 필드 값이
   그대로일 때만 갱신하고, 바뀌거나 삭제됐으면 `false`를 반환해요.
-- 계약 상수는 `PLUGIN_API_VERSION = 4`, Maven 버전은 `4.4.0`이에요. 4.4는 반복 설정
+- 계약 상수는 `PLUGIN_API_VERSION = 4`, Maven 버전은 `4.5.0`이에요. 4.5는 `androidContext`와 `requestAndroidPermission()`을 기본 메서드로 추가했고, 4.4는 반복 설정
   그룹과 설정 기반 서비스 기여를 기본 메서드로 추가해 기존 API 4 플러그인을 다시
-  컴파일할 필요는 없어요. 새 기능을 사용하는 플러그인은 4.4 호스트가 필요해요.
+  컴파일할 필요는 없어요. 새 기능을 사용하는 플러그인은 4.5 호스트가 필요해요.
 
 플러그인은 서명된 `.lpg`로 배포되는 신뢰 코드예요. 호스트는 권한 선언을 다시 검사하고,
 `ToolAccess.DELEGATE`를 플러그인 도구에 허용하지 않아요.
 
 ## 버전된 artifact 사용
 
-좌표는 **`com.sleepysoong.logent:logent-plugin-api:4.4.0`**이에요. 기본 소비 경로는
+좌표는 **`com.sleepysoong.logent:logent-plugin-api:4.5.0`**이에요. 기본 소비 경로는
 GitHub Packages이며, 형제 디렉터리의 소스가 없어도 artifact를 사용할 수 있어요.
 GitHub Packages는 공개 패키지 다운로드에도 인증이 필요할 수 있어요.
 로컬에서는 `read:packages` 권한 토큰을 환경 변수로만 전달하고 저장소에 기록하지 않아요.
@@ -55,7 +55,7 @@ repositories {
     }
 }
 dependencies {
-    implementation("com.sleepysoong.logent:logent-plugin-api:4.4.0")
+    implementation("com.sleepysoong.logent:logent-plugin-api:4.5.0")
 }
 ```
 
@@ -114,7 +114,7 @@ JAR manifest의 `Implementation-Version`, `Logent-Plugin-Api-Commit`과 Maven PO
 
 `gradle.properties`의 `pluginApiVersion`이 발행 버전의 단일 원천이에요.
 PR과 `main` CI는 공개 ABI, 단위 테스트, Maven Local 발행을 확인해요.
-릴리스는 같은 버전의 `v4.4.0` 형식 태그를 push할 때 실행해요. 태그와 버전이 다르면
+릴리스는 같은 버전의 `v4.5.0` 형식 태그를 push할 때 실행해요. 태그와 버전이 다르면
 실패하고, ABI·테스트를 통과한 뒤 GitHub Packages에 JAR·소스 JAR·POM·Gradle metadata를
 발행하고 GitHub Release에 JAR를 첨부해요.
 
