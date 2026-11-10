@@ -44,3 +44,37 @@ data class PluginSetting @JvmOverloads constructor(
         }
     }
 }
+
+/** 공통 필드 양식으로 관리하는 반복 설정 그룹이에요. */
+data class PluginSettingGroup(
+    val key: String,
+    val title: String,
+    val fields: List<PluginSetting>,
+    val description: String = "",
+    val itemTitleKey: String = "name",
+    val addLabel: String = "추가",
+) {
+    init {
+        require(SETTING_ENTRY_KEY.matches(key)) { "반복 설정 키가 올바르지 않아요." }
+        require(title.isNotBlank() && addLabel.isNotBlank()) { "반복 설정 제목과 추가 버튼 이름이 필요해요." }
+        require(fields.size in 1..32) { "반복 설정 필드는 1개 이상 32개 이하여야 해요." }
+        val keys = HashSet<String>()
+        require(fields.all { keys.add(it.key) }) { "반복 설정 필드 키가 중복됐어요." }
+        require(fields.any { it.key == itemTitleKey && it.kind == PluginSettingKind.TEXT }) {
+            "항목 이름으로 표시할 텍스트 필드가 필요해요."
+        }
+    }
+}
+
+/** 안정적인 항목 ID와 선언된 필드 값이에요. 비밀값이 문자열 표현에 노출되지 않아요. */
+class PluginSettingEntry(
+    val id: String,
+    val values: Map<String, String>,
+) {
+    init {
+        require(SETTING_ENTRY_ID.matches(id)) { "반복 설정 항목 ID가 올바르지 않아요." }
+    }
+}
+
+private val SETTING_ENTRY_KEY = Regex("[a-z][a-z0-9_.-]{0,63}")
+private val SETTING_ENTRY_ID = Regex("[a-z0-9][a-z0-9._-]{1,63}")

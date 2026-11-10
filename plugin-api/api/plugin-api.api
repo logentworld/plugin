@@ -154,6 +154,8 @@ public abstract interface class com/sleepysoong/logent/plugin/LogentPlugin {
 	public fun onSessionReset ()V
 	public fun promptSection ()Ljava/lang/String;
 	public fun services ()Ljava/util/List;
+	public fun services (Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/util/List;
+	public fun settingGroups ()Ljava/util/List;
 	public fun settings ()Ljava/util/List;
 	public fun skills ()Ljava/util/List;
 	public fun slashCommands ()Ljava/util/List;
@@ -168,6 +170,8 @@ public final class com/sleepysoong/logent/plugin/LogentPlugin$DefaultImpls {
 	public static fun onSessionReset (Lcom/sleepysoong/logent/plugin/LogentPlugin;)V
 	public static fun promptSection (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/lang/String;
 	public static fun services (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/util/List;
+	public static fun services (Lcom/sleepysoong/logent/plugin/LogentPlugin;Lcom/sleepysoong/logent/plugin/PluginHost;)Ljava/util/List;
+	public static fun settingGroups (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/util/List;
 	public static fun settings (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/util/List;
 	public static fun skills (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/util/List;
 	public static fun slashCommands (Lcom/sleepysoong/logent/plugin/LogentPlugin;)Ljava/util/List;
@@ -343,9 +347,13 @@ public abstract interface class com/sleepysoong/logent/plugin/PluginHost {
 	public fun httpStream-BWLJW6A (Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/jvm/functions/Function1;Ljava/util/Set;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun progress (Ljava/lang/String;)V
 	public abstract fun readAsset-gIAlu-s (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun removeSettingEntry-gIAlu-s (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
 	public fun setting (Ljava/lang/String;)Ljava/lang/String;
+	public fun settingEntries (Ljava/lang/String;)Ljava/util/List;
 	public abstract fun shell-0E7RQCE (Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun writeSetting-gIAlu-s (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
+	public fun writeSettingEntry-gIAlu-s (Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingEntry;)Ljava/lang/Object;
+	public fun writeSettingEntryIfUnchanged-0E7RQCE (Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingEntry;Ljava/util/Map;)Ljava/lang/Object;
 }
 
 public final class com/sleepysoong/logent/plugin/PluginHost$DefaultImpls {
@@ -357,8 +365,12 @@ public final class com/sleepysoong/logent/plugin/PluginHost$DefaultImpls {
 	public static fun http-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun httpStream-0E7RQCE (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun httpStream-BWLJW6A (Lcom/sleepysoong/logent/plugin/PluginHost;Lcom/sleepysoong/logent/plugin/PluginHttpRequest;Lkotlin/jvm/functions/Function1;Ljava/util/Set;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun removeSettingEntry-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
 	public static fun setting (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;)Ljava/lang/String;
+	public static fun settingEntries (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;)Ljava/util/List;
 	public static fun writeSetting-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
+	public static fun writeSettingEntry-gIAlu-s (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingEntry;)Ljava/lang/Object;
+	public static fun writeSettingEntryIfUnchanged-0E7RQCE (Lcom/sleepysoong/logent/plugin/PluginHost;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/PluginSettingEntry;Ljava/util/Map;)Ljava/lang/Object;
 }
 
 public final class com/sleepysoong/logent/plugin/PluginHttpRequest {
@@ -447,6 +459,34 @@ public final class com/sleepysoong/logent/plugin/PluginSetting {
 	public final fun getMinValue ()Ljava/lang/Integer;
 	public final fun getOptions ()Ljava/util/List;
 	public final fun getStep ()I
+	public final fun getTitle ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginSettingEntry {
+	public fun <init> (Ljava/lang/String;Ljava/util/Map;)V
+	public final fun getId ()Ljava/lang/String;
+	public final fun getValues ()Ljava/util/Map;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginSettingGroup {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/List;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun component6 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginSettingGroup;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginSettingGroup;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginSettingGroup;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAddLabel ()Ljava/lang/String;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getFields ()Ljava/util/List;
+	public final fun getItemTitleKey ()Ljava/lang/String;
+	public final fun getKey ()Ljava/lang/String;
 	public final fun getTitle ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;

@@ -28,11 +28,17 @@ interface LogentPlugin {
     /** 호스트가 제공하는 공용 서비스. 코어는 타입으로 찾아요. */
     fun services(): List<PluginService> = emptyList()
 
+    /** 저장된 반복 설정을 읽어 같은 플러그인에서 여러 서비스를 기여해요. */
+    fun services(host: PluginHost): List<PluginService> = services()
+
     /** 플러그인이 기여하는 슬래시 커맨드. 입력 원문은 모델에 보내지 않아요. */
     fun slashCommands(): List<PluginSlashCommand> = emptyList()
 
     /** 코어가 렌더링하고 앱 전용 저장소에 보관할 설정 스키마예요. */
     fun settings(): List<PluginSetting> = emptyList()
+
+    /** 사용자가 항목을 추가·수정·삭제할 수 있는 반복 설정 양식이에요. */
+    fun settingGroups(): List<PluginSettingGroup> = emptyList()
 
     /** 시스템·사용자·도구·세션 수명주기에 개입하는 훅이에요. */
     fun hooks(): PluginHooks? = null
@@ -95,6 +101,25 @@ interface PluginHost {
     /** 선언한 설정 키만 저장해요. 호스트가 범위·종류를 다시 검증해요. */
     fun writeSetting(key: String, value: String): Result<Unit> =
         Result.failure(UnsupportedOperationException("플러그인 설정 쓰기를 지원하지 않아요."))
+
+    /** 선언된 반복 설정 그룹의 항목만 읽어요. 비밀값은 로그·프롬프트에 넣지 않아요. */
+    fun settingEntries(groupKey: String): List<PluginSettingEntry> = emptyList()
+
+    /** 항목을 추가하거나 전달한 필드만 갱신해요. 생략한 필드는 기존 값을 유지해요. */
+    fun writeSettingEntry(groupKey: String, entry: PluginSettingEntry): Result<Unit> =
+        Result.failure(UnsupportedOperationException("반복 설정 쓰기를 지원하지 않아요."))
+
+    /** 기대한 필드 값이 그대로일 때만 원자 갱신해요. 변경·삭제된 항목에는 false를 반환해요. */
+    fun writeSettingEntryIfUnchanged(
+        groupKey: String,
+        entry: PluginSettingEntry,
+        expectedValues: Map<String, String>,
+    ): Result<Boolean> =
+        Result.failure(UnsupportedOperationException("반복 설정 조건부 쓰기를 지원하지 않아요."))
+
+    /** 선언된 그룹에서 지정한 항목만 삭제해요. 다른 항목은 그대로 유지해요. */
+    fun removeSettingEntry(groupKey: String, entryId: String): Result<Unit> =
+        Result.failure(UnsupportedOperationException("반복 설정 삭제를 지원하지 않아요."))
 
     /** 실행 중인 도구 카드에 짧은 진행 문구를 보여 줘요. */
     fun progress(message: String)
