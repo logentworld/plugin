@@ -277,6 +277,64 @@ public final class com/sleepysoong/logent/plugin/PluginApiKt {
 	public static final field PLUGIN_API_VERSION I
 }
 
+public final class com/sleepysoong/logent/plugin/PluginChatContext {
+	public fun <init> (Lcom/sleepysoong/logent/plugin/PluginHookContext;JLcom/sleepysoong/logent/plugin/PluginMessageOrigin;ZLjava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Lcom/sleepysoong/logent/plugin/PluginHookContext;JLcom/sleepysoong/logent/plugin/PluginMessageOrigin;ZLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lcom/sleepysoong/logent/plugin/PluginHookContext;
+	public final fun component2 ()J
+	public final fun component3 ()Lcom/sleepysoong/logent/plugin/PluginMessageOrigin;
+	public final fun component4 ()Z
+	public final fun component5 ()Ljava/lang/String;
+	public final fun component6 ()Ljava/lang/String;
+	public final fun copy (Lcom/sleepysoong/logent/plugin/PluginHookContext;JLcom/sleepysoong/logent/plugin/PluginMessageOrigin;ZLjava/lang/String;Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginChatContext;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginHookContext;JLcom/sleepysoong/logent/plugin/PluginMessageOrigin;ZLjava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginChatContext;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMessageId ()J
+	public final fun getOrigin ()Lcom/sleepysoong/logent/plugin/PluginMessageOrigin;
+	public final fun getParentSessionId ()Ljava/lang/String;
+	public final fun getQueued ()Z
+	public final fun getSession ()Lcom/sleepysoong/logent/plugin/PluginHookContext;
+	public final fun getSourceId ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginChatEvent : java/lang/Enum {
+	public static final field AI_RECEIVE Lcom/sleepysoong/logent/plugin/PluginChatEvent;
+	public static final field MESSAGE_DELETE Lcom/sleepysoong/logent/plugin/PluginChatEvent;
+	public static final field MESSAGE_RESTORE Lcom/sleepysoong/logent/plugin/PluginChatEvent;
+	public static final field USER_SEND Lcom/sleepysoong/logent/plugin/PluginChatEvent;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginChatEvent;
+	public static fun values ()[Lcom/sleepysoong/logent/plugin/PluginChatEvent;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginChatMessage {
+	public fun <init> (Lcom/sleepysoong/logent/plugin/ApiMessage;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)V
+	public synthetic fun <init> (Lcom/sleepysoong/logent/plugin/ApiMessage;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lcom/sleepysoong/logent/plugin/ApiMessage;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Z
+	public final fun component6 ()Ljava/lang/Integer;
+	public final fun component7 ()Ljava/lang/Integer;
+	public final fun component8 ()Ljava/lang/String;
+	public final fun copy (Lcom/sleepysoong/logent/plugin/ApiMessage;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginChatMessage;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lcom/sleepysoong/logent/plugin/ApiMessage;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginChatMessage;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getApiMessage ()Lcom/sleepysoong/logent/plugin/ApiMessage;
+	public final fun getDetail ()Ljava/lang/String;
+	public final fun getImages ()Ljava/util/List;
+	public final fun getInputTokens ()Ljava/lang/Integer;
+	public final fun getOutputTokens ()Ljava/lang/Integer;
+	public final fun getResponseModel ()Ljava/lang/String;
+	public final fun getTitle ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun isError ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
 public final class com/sleepysoong/logent/plugin/PluginContext {
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -289,6 +347,31 @@ public final class com/sleepysoong/logent/plugin/PluginContext {
 	public final fun getProgress ()Lkotlin/jvm/functions/Function1;
 	public final fun getSessionId ()Ljava/lang/String;
 	public final fun getWorkspace ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/sleepysoong/logent/plugin/PluginDeleteDecision {
+}
+
+public final class com/sleepysoong/logent/plugin/PluginDeleteDecision$Delete : com/sleepysoong/logent/plugin/PluginDeleteDecision {
+	public fun <init> (Lcom/sleepysoong/logent/plugin/PluginChatMessage;)V
+	public final fun component1 ()Lcom/sleepysoong/logent/plugin/PluginChatMessage;
+	public final fun copy (Lcom/sleepysoong/logent/plugin/PluginChatMessage;)Lcom/sleepysoong/logent/plugin/PluginDeleteDecision$Delete;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginDeleteDecision$Delete;Lcom/sleepysoong/logent/plugin/PluginChatMessage;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginDeleteDecision$Delete;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMessage ()Lcom/sleepysoong/logent/plugin/PluginChatMessage;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginDeleteDecision$Deny : com/sleepysoong/logent/plugin/PluginDeleteDecision {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginDeleteDecision$Deny;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginDeleteDecision$Deny;Ljava/lang/String;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginDeleteDecision$Deny;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getReason ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
@@ -316,21 +399,39 @@ public final class com/sleepysoong/logent/plugin/PluginHookContext {
 }
 
 public abstract interface class com/sleepysoong/logent/plugin/PluginHooks {
+	public fun aiReceived (Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun beforeAiReceive (Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun beforeMessageDelete (Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun beforeMessageRestore (Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun beforeUserSend (Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getChatEvents ()Ljava/util/Set;
+	public fun messageDeleted (Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun messageRestored (Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun sessionReset ()V
 	public fun sessionStart (Lcom/sleepysoong/logent/plugin/PluginHookContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun systemPrompt (Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun toolCall (Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun toolResult (Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/ToolResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun userMessage (Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun userSent (Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class com/sleepysoong/logent/plugin/PluginHooks$DefaultImpls {
+	public static fun aiReceived (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun beforeAiReceive (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun beforeMessageDelete (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun beforeMessageRestore (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun beforeUserSend (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun getChatEvents (Lcom/sleepysoong/logent/plugin/PluginHooks;)Ljava/util/Set;
+	public static fun messageDeleted (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun messageRestored (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun sessionReset (Lcom/sleepysoong/logent/plugin/PluginHooks;)V
 	public static fun sessionStart (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginHookContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun systemPrompt (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun toolCall (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun toolResult (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lcom/sleepysoong/logent/plugin/ToolResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static fun userMessage (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginHookContext;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun userSent (Lcom/sleepysoong/logent/plugin/PluginHooks;Lcom/sleepysoong/logent/plugin/PluginChatContext;Lcom/sleepysoong/logent/plugin/PluginChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public abstract interface class com/sleepysoong/logent/plugin/PluginHost {
@@ -428,6 +529,17 @@ public final class com/sleepysoong/logent/plugin/PluginMcpServer {
 	public final fun getUrl ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginMessageOrigin : java/lang/Enum {
+	public static final field COMPOSER Lcom/sleepysoong/logent/plugin/PluginMessageOrigin;
+	public static final field SCHEDULE Lcom/sleepysoong/logent/plugin/PluginMessageOrigin;
+	public static final field SLASH_PROMPT Lcom/sleepysoong/logent/plugin/PluginMessageOrigin;
+	public static final field SUBAGENT Lcom/sleepysoong/logent/plugin/PluginMessageOrigin;
+	public static final field VOICE Lcom/sleepysoong/logent/plugin/PluginMessageOrigin;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/sleepysoong/logent/plugin/PluginMessageOrigin;
+	public static fun values ()[Lcom/sleepysoong/logent/plugin/PluginMessageOrigin;
 }
 
 public abstract interface class com/sleepysoong/logent/plugin/PluginService {
