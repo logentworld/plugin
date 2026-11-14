@@ -3,6 +3,9 @@ package com.sleepysoong.logent.plugin
 /** 플러그인과 호스트가 함께 쓰는 계약 버전. 깨지는 변경은 반드시 올려요. */
 const val PLUGIN_API_VERSION = 4
 
+/** 파생 설정 기능을 명시적으로 사용하는 플러그인의 계약 버전이에요. */
+const val PLUGIN_DERIVED_SETTINGS_API_VERSION = 5
+
 /**
  * Logent 기능 플러그인.
  *

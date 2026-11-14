@@ -275,6 +275,7 @@ public final class com/sleepysoong/logent/plugin/PluginAiStreamEvent$Reasoning :
 
 public final class com/sleepysoong/logent/plugin/PluginApiKt {
 	public static final field PLUGIN_API_VERSION I
+	public static final field PLUGIN_DERIVED_SETTINGS_API_VERSION I
 }
 
 public final class com/sleepysoong/logent/plugin/PluginChatContext {
@@ -374,6 +375,43 @@ public final class com/sleepysoong/logent/plugin/PluginDeleteDecision$Deny : com
 	public final fun getReason ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginDerivedSetting {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lcom/sleepysoong/logent/plugin/PluginDerivedSetting;
+	public static synthetic fun copy$default (Lcom/sleepysoong/logent/plugin/PluginDerivedSetting;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)Lcom/sleepysoong/logent/plugin/PluginDerivedSetting;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDependencyKeys ()Ljava/util/List;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getGroupKey ()Ljava/lang/String;
+	public final fun getKey ()Ljava/lang/String;
+	public final fun getTitle ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/sleepysoong/logent/plugin/PluginDerivedSettingSnapshot {
+	public fun <init> (Lcom/sleepysoong/logent/plugin/PluginSettingEntry;Ljava/util/Map;Ljava/util/Map;)V
+	public final fun getEntry ()Lcom/sleepysoong/logent/plugin/PluginSettingEntry;
+	public final fun getRevisions ()Ljava/util/Map;
+	public final fun getValues ()Ljava/util/Map;
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/sleepysoong/logent/plugin/PluginDerivedSettings {
+	public abstract fun derivedSettings ()Ljava/util/List;
+}
+
+public abstract interface class com/sleepysoong/logent/plugin/PluginDerivedSettingsHost {
+	public abstract fun derivedSettingSnapshots (Ljava/lang/String;)Ljava/util/List;
+	public abstract fun writeDerivedSettingIfCurrent-yxL6bBk (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
 }
 
 public final class com/sleepysoong/logent/plugin/PluginHookContext {
