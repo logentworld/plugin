@@ -44,5 +44,5 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create "$GITHUB_REF_NAME" plugin-api/build/libs/*.jar \
-            --verify-tag --generate-notes --title "Logent Plugin API $GITHUB_REF_NAME" \
+            --verify-tag --generate-notes --title "$GITHUB_REF_NAME" \
             --notes '같은 버전의 Maven artifact를 GitHub Packages에서 사용할 수 있어요.'
